@@ -13,3 +13,12 @@
   Establishment.create([{name: "Jarrah Restaurant & Bar", address: "26 Southgate Ave, Southbank, VIC", phone: "(03) 9693 6000", rating: "4" }])
 
   puts "Restaurants Created"
+
+  puts "creating users"
+
+  em = User.create(email: "em@example.com", password: "secret")
+  steph = User.create(email: "steph@example.com", password: "secret")
+  chen = User.create(email: "chen@example.com", password: "secret")
+  ben = User.create(email: "ben@example.com", password: "secret")
+
+  puts "users created"
