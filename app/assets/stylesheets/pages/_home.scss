@@ -11,6 +11,11 @@
 
 .container-icons {
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 300px;
 }
 
 .icon {
