@@ -13,3 +13,5 @@
   Establishment.create([{name: "Jarrah Restaurant & Bar", address: "26 Southgate Ave, Southbank, VIC", phone: "(03) 9693 6000", rating: "4" }])
 
   puts "Restaurants Created"
+
+  
