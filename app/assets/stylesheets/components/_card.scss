@@ -1,0 +1,26 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin: 100px;
+}
+
+.card-product {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+.card-product img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-product-infos {
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
