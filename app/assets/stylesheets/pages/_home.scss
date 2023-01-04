@@ -8,3 +8,21 @@
   text-align: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.container-icons {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 300px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
