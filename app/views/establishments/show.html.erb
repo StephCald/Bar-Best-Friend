@@ -1,10 +1,22 @@
 <h1><%= @establishment.name %></h1>
 <div>
-  <img src="<%= establishment.image %>">
+  <img src="<%= @establishment.image %>">
   <p></p><%= @establishment.address %>
   <%= @establishment.phone %>
   <%= @establishment.type %>
 </div>
-<div>
-
+<%# Reviews %>
+<p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
+<div class="container">
+  <div class="reviews">
+    <% if @establishment.reviews.count == 0 %>
+      <p>Be the first to leave a review on this list</p>
+    <% else %>
+      <% @establishment.reviews.each do |review| %>
+      <div>
+        <p><%= review.user.username %> - <%= review.comments %></p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
