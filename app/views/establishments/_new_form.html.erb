@@ -21,6 +21,10 @@
         <%= f.collection_select :type, Establishment.types.keys, :to_s, :to_s, prompt: "Select a type" %>
       </div>
       <div class="mb-3">
+        <%= f.label :image, {class: 'form-label'} %>
+        <%= f.text_field :image, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
         <%= f.submit "Submit" %>
       </div>
     <% end %>

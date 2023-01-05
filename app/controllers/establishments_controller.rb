@@ -5,15 +5,23 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
-   @user = current_user
-   @establishment = Establishment.find(params[:id])
-
+    @user = current_user
+    @establishment = Establishment.find(params[:id])
   end
 
   def new
-   @user = current_user
-   @establishment = Establishment.new
- end
+    @user = current_user
+    @establishment = Establishment.new
+  end
+
+  def create
+    @establishment = Establishment.new(establishment_params)
+    if @establishment.save
+      redirect_to establishment_path(@establishment)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   private
 
