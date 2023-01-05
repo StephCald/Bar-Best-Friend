@@ -4,5 +4,4 @@ class FavoritesController < ApplicationController
     @favorites = current_user.favorite(@establishment)
   end
 
-
 end

@@ -14,6 +14,7 @@ class EstablishmentController < ApplicationController
   @establishment = Establishment.new
  end
 
+
   # def favorite
   #   @establishment = Establishment.find(params[:id])
   #   current_user.favorite(@establishment)
@@ -25,7 +26,6 @@ class EstablishmentController < ApplicationController
   #   current_user.unfavorite(@establishment)
   #   redirect_to :back
   # end
-
 
  private
 
