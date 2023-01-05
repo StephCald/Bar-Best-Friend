@@ -7,13 +7,12 @@ class EstablishmentsController < ApplicationController
  def show
   @user = current_user
   @establishment = Establishment.find(params[:id])
-
  end
 
  def new
   @user = current_user
   @establishment = Establishment.new
-end
+ end
 
  private
 
