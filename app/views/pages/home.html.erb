@@ -1,40 +1,41 @@
 <div class="container">
   <h1>Bar's Best Friend</h1>
   <p>Never leave your furry family member home alone again!</p>
+    <img class= "avatar-large" src="https://st2.depositphotos.com/1326558/6896/i/600/depositphotos_68966205-stock-photo-black-pug-dog.jpg" alt="pug" width="400" height="300">
   <h5>Find all your local dog-friendly places in one spot!</h5>
 </div>
+  <%= render 'searchbar' %>
 
 <div class="container-icons">
-<div class="icon">
-<i class="fa-solid fa-wine-glass"></i>
-<p>bars</p>
-</div>
-<div class="icon">
-<i class="fa-solid fa-umbrella-beach"></i>
-<p>beaches</p>
-</div>
-<div class="icon">
-<i class="fa-solid fa-person-hiking"></i>
-<p>nature trails</p>
-</div>
-<div class="icon">
-<i class="fa-solid fa-tree"></i>
-<p>parks</p>
+  <div class="icon">
+    <i class="fa-solid fa-wine-glass"></i>
+    <p>bars</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-umbrella-beach"></i>
+    <p>beaches</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-person-hiking"></i>
+    <p>nature trails</p>
+  </div>
+  <div class="icon">
+    <i class="fa-solid fa-tree"></i>
+    <p>parks</p>
+  </div>
 </div>
 
-
-</div>
 <div class="container">
-  <div class="cards">
+  <div class="card-trip">
     <% @establishments.each do |establishment| %>
-      <div class="card-product">
-        <%# <%= link_to establishment_path(establishment) do %>
+          <div class="card-trip img">
+            <img src="<%= establishment.image %>">
+          </div>
           <div class="card-product-infos">
             <h2> <%= establishment.name %> </h2>
             <p><em><%= establishment.type  %></em></p>
+            <p><em><%= "⭐️" * establishment.rating  %></em></p>
           </div>
-          <% end %>
-      </div>
-      <%# <% end %>
+      <% end %>
   </div>
 </div>
