@@ -1,4 +1,4 @@
-class EstablishmentController < ApplicationController
+class EstablishmentsController < ApplicationController
   def index
     @user = current_user
     @establishments = Establishment.all
@@ -7,6 +7,7 @@ class EstablishmentController < ApplicationController
   def show
     @user = current_user
     @establishment = Establishment.find(params[:id])
+    @review = Review.new(establishment: @establishment)
   end
 
   def new
