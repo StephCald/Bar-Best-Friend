@@ -1,12 +1,144 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+#navbar {
+  display: block;
+  position: relative;
+
+  height: 3.25em;
+  width: 400px;
+  overflow: hidden;
+
+  margin: 1em;
+  border-radius: 10px;
+
+  transition: all .63s;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#menu_logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 15%;
+  height: 100%;
+
+  // background: #000;
+  color: #FFF;
+  text-align: center;
+  font-size: 2.6em;
+
+  cursor: hand;
+  cursor: pointer;
+
+  transition: all .65s .5s;
+
+  border-radius: 50%;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+nav {
+  display: block;
+
+  height: 110%;
+  width: 75%;
+  overflow: hidden;
+
+  float: right;
+
+  transition: all .65s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  height: 100%;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  width: 3.25em;
+  height: 3.25em;
+  float: left;
+  text-align: center;
+  background-color: #FFF;
+  border: 2px solid #333;
+  border-radius: 50%;
+  transition: all .2s;
+  margin: 0em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+li:active {
+  box-shadow: 0px 0px 8px 0px #333333 inset;
+
+  transition: all .5s;
+}
+
+li:hover {
+  background-color: #eee;
+
+  transition: all .2s;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 0.60em;
+  margin: 0em 0.5em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a::before {
+  background: #666;
+
+  transition: all .3s;
+}
+
+li:hover a::before {
+  top: 0;
+  transition: all .35s;
+}
+
+li:active a::before {
+  top: 3em;
+  transition: all .15s;
+}
+
+#navbar.clickHide {
+  width: 10%;
+
+  transition: all .5s .65s;
+}
+
+.clickHide #menu_logo {
+  width: 100%;
+  transition: all .5s;
+}
+
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
 }
