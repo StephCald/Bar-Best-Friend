@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
+  resources :users do
+    resources :favorites, only: :index
+  end
+
 end

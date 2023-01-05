@@ -25,3 +25,9 @@
   ben = User.create(email: "ben@example.com", password: "secret")
 
   puts "users created"
+
+  # puts "destroying chen's fav"
+  # chen.destroy_all
+  # puts "Creating chen's fav"
+  # chen_fav = chen.favorite(Establishment(4))
+  # puts "chen's fav Created"

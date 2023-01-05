@@ -12,7 +12,20 @@ class EstablishmentController < ApplicationController
  def new
   @user = current_user
   @establishment = Establishment.new
-end
+ end
+
+  # def favorite
+  #   @establishment = Establishment.find(params[:id])
+  #   current_user.favorite(@establishment)
+  #   redirect_to :back
+  # end
+
+  # def unfavorite
+  #   @establishment = Establishment.find(params[:id])
+  #   current_user.unfavorite(@establishment)
+  #   redirect_to :back
+  # end
+
 
  private
 
