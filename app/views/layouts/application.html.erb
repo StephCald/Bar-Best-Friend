@@ -9,6 +9,21 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script
+      id="search-js"
+      defer
+      src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"
+      data-turbo-track="reload"
+      >
+    </script>
+    <script data-turbo-track="reload">
+      const script = document.getElementById('search-js');
+      script.onload = function() {
+          mapboxsearch.autofill({
+              accessToken: 'your access token here'
+          });
+      };
+    </script>
   </head>
 
   <body>

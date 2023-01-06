@@ -1,0 +1,6 @@
+<div class="add-review">
+  <%= simple_form_for [@establishment, @review], url: establishment_reviews_path(@establishment) do |f| %>
+    <%= f.input :comments %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

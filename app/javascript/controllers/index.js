@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import CollapsableMenuController from "./collapsable_menu_controller"
+application.register("collapsable-menu", CollapsableMenuController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Submit your dog-friendly location!</h1>
+  <h5>Type the name of your dog-friendly location below</h5>
+</div>
+
+<div class="container">
+<%= render 'searchbar' %>
+# need to somehow link this search with google API
+<br>
+  <div class="mb-3">
+    <%= form_with model: @establishment do |f| %>
+      <div class="mb-3">
+            <%= f.label :type, "Location-type", {class: 'form-label'} %>
+            <%= f.number_field :type, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h6> <em>Or you can manually enter the details here</em> </h6>
+  <%= render 'new_form' %>
+</div>
