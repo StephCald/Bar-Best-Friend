@@ -1,4 +1,4 @@
-class EstablishmentController < ApplicationController
+class EstablishmentsController < ApplicationController
  def index
    @user = current_user
    @establishments = Establishment.all
