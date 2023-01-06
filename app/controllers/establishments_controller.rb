@@ -12,14 +12,21 @@ class EstablishmentsController < ApplicationController
   def new
     @user = current_user
     @establishment = Establishment.new
-
-  def create
-
   end
 
- private
+  def create
+    @establishment = Establishment.new(establishment_params)
+    if @establishment.save
+      redirect_to establishment_path(@establishment)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
- def establishment_params
-  params.require(:establishment).permit(:name, :phone, :address, :type, :rating, :image)
+  private
+
+  def establishment_params
+   params.require(:establishment).permit(:name, :phone, :address, :type, :rating, :image)
+  end
  end
-end
+
