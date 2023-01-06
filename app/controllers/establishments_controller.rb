@@ -29,3 +29,4 @@ class EstablishmentsController < ApplicationController
    params.require(:establishment).permit(:name, :phone, :address, :type, :rating, :image)
   end
  end
+
