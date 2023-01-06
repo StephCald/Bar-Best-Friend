@@ -1,17 +1,31 @@
+<div class="container">
+  <h1><%= @establishment.name %></h1>
+  <div class="card img">
+    <img src="<%= @establishment.image %>">
+  </div>
+    <div class="conatiner">
+      <p><%= @establishment.address %></p>
+      <p></p><%= @establishment.phone %>
+      <p><em><%= @establishment.type %></em></p>
+      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
+      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
+    </div>
+  <div>
 
-<h1><%= @establishment.name %></h1>
-<div>
-  <img src="<%= @establishment.image %>">
-  <p></p><%= @establishment.address %>
-  <%= @establishment.phone %>
-  <%= @establishment.type %>
-  
-<%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
-<%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
-
+  </div>
 </div>
-<div>
-
+<div class="container-icons"></div>
+    <div class="icon">
+      <i class="fa-solid fa-phone"></i>
+      <p>Contact</p>
+    </div>
+    <div class="icon">
+      <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
+    </div>
+    <div class="icon">
+      <i class="fa-solid fa-location-arrow"></i>
+      <p>Navigate</p>
+    </div>
 </div>
 <%# Reviews %>
 <p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
