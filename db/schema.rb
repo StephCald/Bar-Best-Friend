@@ -19,10 +19,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_014554) do
     t.string "address"
     t.string "phone"
     t.string "name"
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.integer "type", default: 0
   end
 
   create_table "favorites", force: :cascade do |t|

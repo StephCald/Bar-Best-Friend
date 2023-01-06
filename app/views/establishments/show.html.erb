@@ -1,4 +1,3 @@
-
 <div class="container">
   <h1><%= @establishment.name %></h1>
   <div class="card img">
@@ -8,6 +7,8 @@
       <p><%= @establishment.address %></p>
       <p></p><%= @establishment.phone %>
       <p><em><%= @establishment.type %></em></p>
+      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
+      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
     </div>
   <div>
 
@@ -26,3 +27,19 @@
       <p>Navigate</p>
     </div>
 </div>
+<%# Reviews %>
+<p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
+<div class="container">
+  <div class="reviews">
+    <% if @establishment.reviews.count == 0 %>
+      <p>Be the first to leave a review on this list</p>
+    <% else %>
+      <% @establishment.reviews.each do |review| %>
+      <div>
+        <p><%= review.user.username %> - <%= review.comments %></p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
