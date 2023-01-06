@@ -30,6 +30,7 @@
   overflow: hidden;
   background: rgb(233, 230, 230);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 5px;
 }
 
 .card-trip > img {
@@ -64,4 +65,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+.card > img {
+  height: 380px;
+  width: 100%;
+  object-fit: cover;
 }
