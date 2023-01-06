@@ -22,6 +22,18 @@ class EstablishmentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
+  # def favorite
+  #   @establishment = Establishment.find(params[:id])
+  #   current_user.favorite(@establishment)
+  #   redirect_to :back
+  # end
+
+  # def unfavorite
+  #   @establishment = Establishment.find(params[:id])
+  #   current_user.unfavorite(@establishment)
+  #   redirect_to :back
+  # end
 
   private
 
@@ -29,4 +41,3 @@ class EstablishmentsController < ApplicationController
    params.require(:establishment).permit(:name, :phone, :address, :type, :rating, :image)
   end
  end
-

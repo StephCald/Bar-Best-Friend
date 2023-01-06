@@ -1,9 +1,14 @@
+
 <h1><%= @establishment.name %></h1>
 <div>
   <img src="<%= @establishment.image %>">
   <p></p><%= @establishment.address %>
   <%= @establishment.phone %>
   <%= @establishment.type %>
+  
+<%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
+<%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
+
 </div>
 <div>
 
