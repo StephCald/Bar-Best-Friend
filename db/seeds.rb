@@ -4,9 +4,9 @@
   User.destroy_all
   puts "Creating Restaurants"
 
-  Establishment.create([{name: "The Reserve Restaurant", address: "649 Bridge Rd, Richmond, VIC", phone: "(03) 9246 1200", rating: "4", type: "bars", image: "https://cdn.concreteplayground.com/content/uploads/2020/09/BrewDog_dog_PandoraPhotography_supplied.jpg"}])
-  Establishment.create([{name: "Osteria LLaria", address: "367 Little Bourke St, Melbourne, VIC", phone: "(03) 9642 2287", rating: "5", type: "beaches", image: "https://www.rover.com/blog/wp-content/uploads/2019/07/Durdle-Door-JURASSICCOAST.ORG_.jpg"}])
-  Establishment.create([{name: "Jarrah Restaurant & Bar", address: "26 Southgate Ave, Southbank, VIC", phone: "(03) 9693 6000", rating: "4", type: "parks", image: "https://askmelbourne.com.au/wp-content/uploads/mathew-smith-gM6QroS17aw-unsplash.jpg" }])
+  Establishment.create([{name: "The Reserve Restaurant", address: "649 Bridge Rd, Richmond, VIC", phone: "(03) 9246 1200", rating: "4", type: "bar", image: "https://cdn.concreteplayground.com/content/uploads/2020/09/BrewDog_dog_PandoraPhotography_supplied.jpg"}])
+  Establishment.create([{name: "Osteria LLaria", address: "367 Little Bourke St, Melbourne, VIC", phone: "(03) 9642 2287", rating: "5", type: "beach", image: "https://www.rover.com/blog/wp-content/uploads/2019/07/Durdle-Door-JURASSICCOAST.ORG_.jpg"}])
+  Establishment.create([{name: "Jarrah Restaurant & Bar", address: "26 Southgate Ave, Southbank, VIC", phone: "(03) 9693 6000", rating: "4", type: "park", image: "https://askmelbourne.com.au/wp-content/uploads/mathew-smith-gM6QroS17aw-unsplash.jpg" }])
 
   puts "Restaurants Created"
 
