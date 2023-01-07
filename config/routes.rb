@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :favorites
+    resources :favorites, only: :index
   end
 end
