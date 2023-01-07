@@ -1,11 +1,11 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
+  <%= link_to "Favorite", @user.favorite (@establishment) %>
+  <%= link_to "Unfavorite", @user.unfavorite (@establishment)%>
   <div class="card img">
     <img src="<%= @establishment.image %>">
   </div>
     <div class="conatiner">
-      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %> %>
-      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %> %>
       <p><%= @establishment.address %></p>
       <p></p><%= @establishment.phone %>
       <p><em><%= @establishment.type %></em></p>
