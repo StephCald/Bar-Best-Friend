@@ -3,10 +3,10 @@
   <h5>Type the name of your dog-friendly location below</h5>
 </div>
 
-<div class="container">
+<div class="container container-topline">
 <%= render 'searchbar' %>
 # need to somehow link this search with google API
-<br>
+
   <div class="mb-3">
     <%= form_with model: @establishment do |f| %>
       <div class="mb-3">
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container container-topline">
   <h6> <em>Or you can manually enter the details here</em> </h6>
   <%= render 'new_form' %>
 </div>

@@ -9,3 +9,6 @@ application.register("collapsable-menu", CollapsableMenuController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MapboxSearchboxController from "./mapbox_searchbox_controller"
+application.register("mapbox-searchbox", MapboxSearchboxController)

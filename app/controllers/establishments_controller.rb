@@ -16,13 +16,13 @@ class EstablishmentsController < ApplicationController
 
   def create
     @establishment = Establishment.new(establishment_params)
-    if @establishment.save
+    if @establishment.save!
       redirect_to establishment_path(@establishment)
     else
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   # def favorite
   #   @establishment = Establishment.find(params[:id])
   #   current_user.favorite(@establishment)
