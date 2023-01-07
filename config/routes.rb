@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   resources :establishments do
     resources :reviews, only: %i[new create]
     # member do
-    #   post 'toggle_favorite', to: "establishment#toggle_favorite"
+    #   post 'toggle_favorite', to: "establishments#toggle_favorite"
     # end
   end
-
-  resources :establishments, only: :index do
-    member do
-      post 'toggle_favorite', to: "establishments#toggle_favorite"
-    end
-  end
+  post 'establishments/:id/toggle_favorite', to: 'establishments#toggle_favorite', as: :toggle_favorite
+  # resources :establishments do
+  #   member do
+  #     post 'toggle_favorite', to: "establishments#toggle_favorite"
+  #   end
+  # end
 
   resources :users do
     resources :favorites

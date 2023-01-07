@@ -1,6 +1,5 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
-
    <%= link_to "like", toggle_favorite_establishment_path(@establishment), remote: true, method: :post %>
 
   <div class="card img">
