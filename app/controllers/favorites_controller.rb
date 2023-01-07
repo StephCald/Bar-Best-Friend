@@ -11,7 +11,6 @@ class FavoritesController < ApplicationController
         end
 
     end
-    # establishment.find_by(id: @favoritable_id).name
   end
 
   # def show
