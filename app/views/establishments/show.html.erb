@@ -4,11 +4,11 @@
     <img src="<%= @establishment.image %>">
   </div>
     <div class="conatiner">
+      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %> %>
+      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %> %>
       <p><%= @establishment.address %></p>
       <p></p><%= @establishment.phone %>
       <p><em><%= @establishment.type %></em></p>
-      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
-      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
     </div>
   <div>
 
@@ -42,4 +42,3 @@
     <% end %>
   </div>
 </div>
-
