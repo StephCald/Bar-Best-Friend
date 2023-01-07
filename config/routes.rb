@@ -7,8 +7,13 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create]
   end
 
+  resources :establishments, only: :index do
+    member do
+      post 'toggle_favorite', to: "establishments#toggle_favorite"
+    end
+  end
+
   resources :users do
     resources :favorites, only: :index
   end
-
 end
