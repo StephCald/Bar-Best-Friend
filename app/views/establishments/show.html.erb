@@ -6,7 +6,7 @@
     <div class="conatiner">
       <p><%= @establishment.address %></p>
       <p></p><%= @establishment.phone %>
-      <p><em><%= @establishment.type %></em></p>
+      <p><em><%= @establishment.location_type %></em></p>
       <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
       <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
     </div>
@@ -26,6 +26,15 @@
       <i class="fa-solid fa-location-arrow"></i>
       <p>Navigate</p>
     </div>
+    <div class="icon">
+      <%= button_to "Edit" , edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get%>
+    </div>
+    <div class="icon">
+      <%= link_to "Delete",
+          establishment_path(@establishment),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
 </div>
 <%# Reviews %>
 <p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
@@ -42,4 +51,3 @@
     <% end %>
   </div>
 </div>
-
