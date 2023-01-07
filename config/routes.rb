@@ -5,6 +5,15 @@ Rails.application.routes.draw do
 
   resources :establishments do
     resources :reviews, only: %i[new create]
+    # member do
+    #   post 'toggle_favorite', to: "establishment#toggle_favorite"
+    # end
+  end
+
+  resources :establishments, only: :index do
+    member do
+      post 'toggle_favorite', to: "establishments#toggle_favorite"
+    end
   end
 
   resources :users do

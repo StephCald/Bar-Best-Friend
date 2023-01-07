@@ -1,4 +1,5 @@
 class EstablishmentsController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
   def index
     @user = current_user
     @establishments = Establishment.all
@@ -23,18 +24,9 @@ class EstablishmentsController < ApplicationController
     end
   end
 
-  def favorite
-    @user = current_user
+  def toggle_favorite
     @establishment = Establishment.find(params[:id])
-    @user.favorite(@establishment)
-    redirect_to :back
-  end
-
-  def unfavorite
-    @user = current_user
-    @establishment = Establishment.find(params[:id])
-    @user.unfavorite(@establishment)
-    redirect_to :back
+    current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
   end
 
   private
