@@ -3,9 +3,13 @@ class FavoritesController < ApplicationController
     @user = current_user
     @favoritable_ids = Favorite.where(favoritor_id: @user.id).pluck(:favoritable_id)
     # it returns an array of favoritable_ids
+    @establishments = []
     @favoritable_ids.each do |fav|
-      @establishment = Establishment.find(fav)
-      puts @establishment.name
+      establishment = Establishment.find_by(id: fav)
+        if establishment
+        @establishments << establishment
+        end
+
     end
     # establishment.find_by(id: @favoritable_id).name
   end

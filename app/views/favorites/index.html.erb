@@ -1,3 +1,14 @@
 <h1>this page shows users favorite list</h1>
 this is your pawfect list:
-<%= @establishment.name%>
+
+<% @establishments.each do |establishment| %>
+  <div class="card img">
+    <img src="<%= establishment.image %>">
+  </div>
+    <div class="conatiner">
+      <p><%= establishment.address %></p>
+      <p></p><%= establishment.phone %>
+      <p><em><%= establishment.type %></em></p>
+    </div>
+  <div>
+<% end %>
