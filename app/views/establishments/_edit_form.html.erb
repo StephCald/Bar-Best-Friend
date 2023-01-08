@@ -1,0 +1,30 @@
+<div class="container">
+    <%= form_with model: @establishment do |f| %>
+      <div class="mb-3">
+        <%= f.label :name, {class: 'form-label'} %>
+        <%= f.text_field :name, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :address, {class: 'form-label'} %>
+        <%= f.text_field :address, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :rating, {class: 'form-label'} %>
+        <%= f.number_field :rating, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :phone, {class: 'form-label'} %>
+        <%= f.number_field :phone, {class: 'form-control'} %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :location_type, "Location-type", {class: 'form-label'} %>
+        <%= f.collection_select :location_type, Establishment.location_types.keys, :to_s, :to_s, prompt: "Select a type" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :image, {class: 'form-label'} %>
+        <%= f.text_field :image, {class: 'form-control'} %>
+      </div>
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+ </div>
