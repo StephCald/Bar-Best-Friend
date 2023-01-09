@@ -17,8 +17,8 @@
         <%= f.number_field :phone, {class: 'form-control'} %>
       </div>
       <div class="mb-3">
-        <%= f.label :type, "Location-type", {class: 'form-label'} %>
-        <%= f.collection_select :type, Establishment.types.keys, :to_s, :to_s, prompt: "Select a type" %>
+        <%= f.label :location_type, "Location-type", {class: 'form-label'} %>
+        <%= f.collection_select :location_type, Establishment.location_types.keys, :to_s, :to_s, prompt: "Select a type" %>
       </div>
       <div class="mb-3">
         <%= f.label :image, {class: 'form-label'} %>
