@@ -32,13 +32,16 @@
       <i class="fa-solid fa-location-arrow"></i>
       <p>Navigate</p>
     </div>
-    <div class="icon">
-      <%= button_to "Edit" , edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get%>
+    <% if policy(@establishment).edit? %>
+      <div class="icon">
+        <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
+        %>
     </div>
+    <% end %>
     <div class="icon">
       <%= link_to "Delete",
           establishment_path(@establishment),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@establishment).destroy?
       %>
     </div>
 </div>

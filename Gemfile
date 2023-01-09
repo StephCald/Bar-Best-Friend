@@ -29,9 +29,9 @@ gem "jbuilder"
 
 gem "devise"
 
-gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+gem "pundit"
 
-gem "geocoder"
+gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
 gem "pundit"
 

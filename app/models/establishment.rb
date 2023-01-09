@@ -8,9 +8,7 @@ class Establishment < ApplicationRecord
     message: "Only allows Australian numbers "
   }
 
-
   has_many :reviews
   acts_as_favoritable
   enum location_type: {cafe:0, bar:1 , beach:2, park:3}
-
 end

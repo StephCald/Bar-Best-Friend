@@ -12,9 +12,9 @@
 
   puts "creating users"
 
-  em = User.create(email: "em@example.com", password: "secret", username: "Em")
-  steph = User.create(email: "steph@example.com", password: "secret", username: "StephRox")
-  chen = User.create(email: "chen@example.com", password: "secret", username: "Chen")
-  ben = User.create(email: "ben@example.com", password: "secret", username: "Ben")
+  em = User.create(email: "em@example.com", password: "secret", username: "Em", admin: true)
+  steph = User.create(email: "steph@example.com", password: "secret", username: "StephRox", admin: true)
+  chen = User.create(email: "chen@example.com", password: "secret", username: "Chen", admin: true)
+  ben = User.create(email: "ben@example.com", password: "secret", username: "Ben", admin: true)
 
   puts "users created"
