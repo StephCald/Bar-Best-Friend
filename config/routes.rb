@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :establishments, except: :index do
     resources :reviews, only: %i[new create]
   end
+  
+  # resources :review_tags, only: [:create, :new] do
+  # end
 
   resources :establishments, only: :index do
     member do

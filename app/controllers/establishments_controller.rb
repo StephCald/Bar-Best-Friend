@@ -4,6 +4,8 @@ class EstablishmentsController < ApplicationController
 
   def index
     @user = current_user
+    @establishments = Establishment.all
+    @reviews = Reviews.all
     @establishments = policy_scope(Establishment).all
   end
 
@@ -21,18 +23,13 @@ class EstablishmentsController < ApplicationController
   def create
     authorize @establishment
     @establishment = Establishment.new(establishment_params)
+    # establishment.rating = 1 if establishment.rating.empty?
     if @establishment.save!
       redirect_to establishment_path(@establishment)
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-    # def favorite
-  #   @establishment = Establishment.find(params[:id])
-  #   current_user.favorite(@establishment)
-  #   redirect_to :back
-  # end
 
   def toggle_favorite
     @establishment = Establishment.find(params[:id])

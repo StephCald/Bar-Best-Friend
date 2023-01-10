@@ -46,7 +46,6 @@
     </div>
 </div>
 <%# Reviews %>
-<p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
 <div class="container">
   <div class="reviews">
     <% if @establishment.reviews.count == 0 %>
@@ -55,8 +54,12 @@
       <% @establishment.reviews.each do |review| %>
       <div>
         <p><%= review.user.username %> - <%= review.comments %></p>
-      </div>
-      <% end %>
+         <% review.review_tags.each do |review_tag| %>
+          <p><%= review_tag.tag.name %></p>
+            <% end %>
+          </div>
+        <% end %>
     <% end %>
+    <%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %>
   </div>
 </div>

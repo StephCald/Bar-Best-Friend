@@ -14,6 +14,7 @@
 #navbar {
   display: block;
   position: relative;
+  right: 0;
 
   height: 3.25em;
   width: 400px;
@@ -28,7 +29,7 @@
 #menu_logo {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 10;
 
   width: 15%;

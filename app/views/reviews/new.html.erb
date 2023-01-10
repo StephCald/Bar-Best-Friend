@@ -1,6 +1,21 @@
-<div class="add-review">
-  <%= simple_form_for [@establishment, @review], url: establishment_reviews_path(@establishment) do |f| %>
-    <%= f.input :comments %>
-    <%= f.button :submit %>
+<div class="container">
+  <%# <div class="add-review">
+    <%= simple_form_for [@establishment, @review], url: establishment_reviews_path(@establishment) do |f| %>
+      <%# <%= f.input :comments %>
+      <%# <%= f.button :submit %>
+    <%# <% end %>
+  <%# </div>  %>
+  <%= form_with model: @review, url:  establishment_reviews_path(@establishment) do |form| %>
+  <%= form.hidden_field :review_id, value: @review.id %>
+  <%= form.text_field :comments %>
+  <%= form.fields_for :review_tags do |f|%>
+    <% @tags.each do |tag| %>
+      <div>
+        <%= form.check_box "tag_ids[#{tag.id}]",  { }, tag.id, nil %>
+        <%= form.label tag.name %>
+      </div>
+    <% end %>
   <% end %>
+      <%= form.button :submit %>
+<% end %>
 </div>

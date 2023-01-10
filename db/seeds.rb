@@ -18,3 +18,11 @@
   ben = User.create(email: "ben@example.com", password: "secret", username: "Ben", admin: true)
 
   puts "users created"
+
+  water = Tag.create(name: "Water Bowl")
+  indoor = Tag.create(name: "Indoor")
+  outdoor = Tag.create(name: "Outdoor")
+  treats = Tag.create(name: "Treats")
+
+  # puts "created tag"
+  # review = Review.create(comments: "Great vibe",user_id: 8, establishment_id: 6)
