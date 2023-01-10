@@ -41,8 +41,8 @@
       <%= link_to establishment_path(establishment) do %>
         <div class="card-product-infos">
           <h2> <%= establishment.name %> </h2>
-          <p><em><%= establishment.type  %></em> </p>
-          <p><em><%= establishment.rating ? "⭐️" * establishment.rating : "⭐️"  %></em></p>
+          <p><em><%= establishment.location_type  %></em></p>
+          <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
         </div>
       <% end %>
     <% end %>

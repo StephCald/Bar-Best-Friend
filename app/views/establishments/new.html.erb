@@ -3,24 +3,28 @@
   <h5>Type the name of your dog-friendly location below</h5>
 </div>
 
-<div class="container">
-<%= render 'searchbar' %>
-# need to somehow link this search with google API
-<br>
-  <div class="mb-3">
-    <%= form_with model: @establishment do |f| %>
-      <div class="mb-3">
-            <%= f.label :type, "Location-type", {class: 'form-label'} %>
-            <%= f.number_field :type, {class: 'form-control'} %>
-      </div>
-      <div class="mb-3">
-        <%= f.submit "Submit" %>
-      </div>
-    <% end %>
-  </div>
+<div class="container container-topline">
+  <%= form_with model: @establishment, url: new_establishment_path(@establishment) do |f| %>
+    <div class="mb-3">
+      <%= render 'searchbar', form: f %>
+    </div>
+    # need to somehow link this search with google API
+    <div class="mb-3">
+      <%= f.label :location_type, "Location-type", {class: 'form-label'} %>
+      <%= f.collection_select :location_type, Establishment.location_types.keys, :to_s, :to_s, prompt: "Select a type" %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit "Submit" %>
+    </div>
+    </div>
+  <% end %>
 </div>
 
-<div class="container">
+<div class="container container-topline">
   <h6> <em>Or you can manually enter the details here</em> </h6>
   <%= render 'new_form' %>
+</div>
+
+<div class="icon">
+      <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
 </div>

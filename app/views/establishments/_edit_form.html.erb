@@ -6,11 +6,7 @@
       </div>
       <div class="mb-3">
         <%= f.label :address, {class: 'form-label'} %>
-        <%= f.text_field :address, {class: 'form-control'},
-              input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-              wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-                %>
-
+        <%= f.text_field :address, {class: 'form-control'} %>
       </div>
       <div class="mb-3">
         <%= f.label :rating, {class: 'form-label'} %>
