@@ -46,7 +46,6 @@
     </div>
 </div>
 <%# Reviews %>
-<p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
 <div class="container">
   <div class="reviews">
     <% if @establishment.reviews.count == 0 %>
@@ -61,5 +60,6 @@
           </div>
         <% end %>
     <% end %>
+    <%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %>
   </div>
 </div>
