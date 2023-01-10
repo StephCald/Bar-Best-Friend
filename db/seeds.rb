@@ -18,7 +18,7 @@
   ben = User.create(email: "ben@example.com", password: "secret", username: "Ben", admin: true)
 
   puts "users created"
-
+  puts "tags  created"
   water = Tag.create(name: "Water Bowl")
   indoor = Tag.create(name: "Indoor")
   outdoor = Tag.create(name: "Outdoor")

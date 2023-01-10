@@ -1,51 +1,19 @@
-<div class="container">
-  <h1><%= @establishment.name %></h1>
-  <%# will polish it till we focusing on the front end %>
-   <%= button_to "like", toggle_favorite_establishment_path(@establishment), method: :post %>
-   <%# please do not change the line below, it is for testing the toggle  %>
-   <p>This establishment is in my favorites list <%= current_user.favorited?(@establishment) %></p>
-
-
-  <div class="card img">
-    <img src="<%= @establishment.image %>">
-  </div>
-    <div class="conatiner">
-      <p><%= @establishment.address %></p>
-      <p></p><%= @establishment.phone %>
-      <p><em><%= @establishment.location_type %></em></p>
-      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
-      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
-    </div>
-  <div>
-
-  </div>
+<h1><%= @establishment.name %></h1>
+<div>
+  <img src="<%= @establishment.image %>">
+  <p></p><%= @establishment.address %>
+  <%= @establishment.phone %>
+  <%= @establishment.type %>
 </div>
-<div class="container-icons"></div>
-    <div class="icon">
-      <i class="fa-solid fa-phone"></i>
-      <p>Contact</p>
-    </div>
-    <div class="icon">
-      <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
-    </div>
-    <div class="icon">
-      <i class="fa-solid fa-location-arrow"></i>
-      <p>Navigate</p>
-    </div>
-    <% if policy(@establishment).edit? %>
-      <div class="icon">
-        <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
-        %>
-    </div>
-    <% end %>
-    <div class="icon">
-      <%= link_to "Delete",
-          establishment_path(@establishment),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@establishment).destroy?
-      %>
-    </div>
+<div>
+  <% tag_counts = [] %>
+  <% re %>
+</div>
+<div>
+
 </div>
 <%# Reviews %>
+<p><%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %></p>
 <div class="container">
   <div class="reviews">
     <% if @establishment.reviews.count == 0 %>
@@ -54,12 +22,11 @@
       <% @establishment.reviews.each do |review| %>
       <div>
         <p><%= review.user.username %> - <%= review.comments %></p>
-         <% review.review_tags.each do |review_tag| %>
-          <p><%= review_tag.tag.name %></p>
+            <% review.review_tags.each do |review_tag| %>
+              <p><%= review_tag.tag.name %></p>
             <% end %>
-          </div>
-        <% end %>
+      </div>
+      <% end %>
     <% end %>
-    <%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %>
   </div>
 </div>
