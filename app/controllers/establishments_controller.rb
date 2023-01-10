@@ -2,6 +2,7 @@ class EstablishmentsController < ApplicationController
   def index
     @user = current_user
     @establishments = Establishment.all
+    @reviews = Reviews.all
   end
 
   def show
@@ -29,4 +30,3 @@ class EstablishmentsController < ApplicationController
    params.require(:establishment).permit(:name, :phone, :address, :type, :rating, :image)
   end
  end
-

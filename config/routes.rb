@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :establishments do
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[new create] do
+    end
   end
-
+  # resources :review_tags, only: [:create, :new] do
+  # end
 end
