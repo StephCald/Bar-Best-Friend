@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create]
   end
   
-  end
   # resources :review_tags, only: [:create, :new] do
   # end
 
