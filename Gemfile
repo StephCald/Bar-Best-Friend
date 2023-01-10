@@ -29,7 +29,11 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "pundit"
+
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+
+gem "pundit"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

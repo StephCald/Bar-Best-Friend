@@ -3,10 +3,21 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :establishments do
-    resources :reviews, only: %i[new create] do
-    end
+  resources :establishments, except: :index do
+    resources :reviews, only: %i[new create]
+  end
+  
   end
   # resources :review_tags, only: [:create, :new] do
   # end
+
+  resources :establishments, only: :index do
+    member do
+      post 'toggle_favorite', to: "establishments#toggle_favorite"
+    end
+  end
+
+  resources :users do
+    resources :favorites, only: :index
+  end
 end

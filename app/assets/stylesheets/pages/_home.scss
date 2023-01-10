@@ -15,7 +15,12 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 300px;
+  padding: 0px 50px;
+}
+
+.container-topline {
+  border-top: 2px solid rgb(207, 207, 207);
+  padding-top: 20px;
 }
 
 .icon {
