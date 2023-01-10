@@ -4,6 +4,8 @@ class EstablishmentsController < ApplicationController
 
   def index
     @user = current_user
+    @establishments = Establishment.all
+    @reviews = Reviews.all
     @establishments = policy_scope(Establishment).all
   end
 
