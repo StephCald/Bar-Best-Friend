@@ -3,6 +3,7 @@ class EstablishmentsController < ApplicationController
   before_action :authenticate_user!, only: :toggle_favorite
 
   def index
+    authorize @establishment
     @user = current_user
     @establishments = Establishment.all
     @reviews = Reviews.all
@@ -31,8 +32,9 @@ class EstablishmentsController < ApplicationController
     end
   end
 
-  def toggle_favorite
+  def toggle_favorite?
     @establishment = Establishment.find(params[:id])
+    authorize @establishment
     current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
     redirect_to establishment_path(@establishment)
   end
