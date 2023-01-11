@@ -9,7 +9,7 @@ class PagesController < ApplicationController
         lat: establishment.latitude,
         lng: establishment.longitude,
         info_window: render_to_string(partial: "info_window", locals: {establishment: establishment}),
-        image_url: helpers.asset_url("logo.png")
+        image_url: helpers.asset_url("paw.png")
       }
     end
   end
