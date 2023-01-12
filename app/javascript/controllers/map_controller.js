@@ -15,7 +15,7 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb",
-      zoom: 12,
+      zoom: 5,
       center: [144.9631, -37.8136],
     });
     this.#addMarkersToMap();
@@ -39,8 +39,8 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const customMarker = document.createElement("div");
-      customMarker.style.height = "30px";
-      customMarker.style.width = "30px";
+      customMarker.style.height = "20px";
+      customMarker.style.width = "20px";
       customMarker.style.backgroundImage = `url('${marker.image_url}')`;
       customMarker.style.backgroundSize = "contain";
 

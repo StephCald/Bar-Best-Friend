@@ -4,9 +4,12 @@
   User.destroy_all
   puts "Creating Establishments"
 
-  Establishment.create(name: "The Reserve Restaurant", address: "649 Bridge Rd, Richmond, VIC", phone: "(03) 9246 1200", rating: "4", location_type: "bar", image: "https://cdn.concreteplayground.com/content/uploads/2020/09/BrewDog_dog_PandoraPhotography_supplied.jpg")
-  Establishment.create(name: "Osteria LLaria", address: "367 Little Bourke St, Melbourne, VIC", phone: "(03) 9642 2287", rating: "5", location_type: "beach", image: "https://www.rover.com/blog/wp-content/uploads/2019/07/Durdle-Door-JURASSICCOAST.ORG_.jpg")
-  Establishment.create(name: "Jarrah Restaurant & Bar", address: "26 Southgate Ave, Southbank, VIC", phone: "(03) 9693 6000", rating: "4", location_type: "park", image: "https://askmelbourne.com.au/wp-content/uploads/mathew-smith-gM6QroS17aw-unsplash.jpg")
+  Establishment.create(name: "Doghouse Dog Cafe", address: "195 Johnston St, Collingwood, VIC", phone: "(03) 9417 4253", rating: "5", location_type: "cafe", image: "https://pupsy.com.au/wp-content/uploads/2020/02/DogHouse-Cafe.png")
+  Establishment.create(name: "Vincent the Dog", address: "348 Drummond st, Carlton, VIC", phone: "(03) 9348 2068", rating: "5", location_type: "cafe", image: "https://cdn.broadsheet.com.au/cache/33/9f/339f57ae97c276ab1ca92e0e26449113.jpg")
+  Establishment.create(name: "Mentone Dog Beach", address: "Mentone Parade, Mentone, VIC", phone: "0422 060 072", rating: "4", location_type: "beach", image: "https://pupsy.com.au/wp-content/uploads/2019/01/9655_Mentone-Dog-Beach.jpg")
+  Establishment.create(name: "Mathias Walking Track", address: "Mathias Rd, Olinda, VIC", phone: "NA", rating: "5", location_type: "trail", image: "https://explorethedandenongs.com.au/wp-content/uploads/2019/03/Mathias-Walking-Track.jpg")
+  Establishment.create(name: "The Tipsy Cow", address: "359 Bay st, Port Melbourne, VIC", phone: "0483 372 222", rating: "5", location_type: "bar", image: "https://eatdrinkcheap.com.au/images/venue/the-tipsy-cow-port-melbourne.jpg")
+  Establishment.create(name: "The Shady Lady", address: "36 Johnston St, Fitzroy, VIC", phone: "0421 228 482", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/melbourne/images/2019/07/26/145554-7364-135842-3778-theshadylady_hengelhardt_019_lx2fSME.jpg")
 
   puts "Establishments Created"
 
