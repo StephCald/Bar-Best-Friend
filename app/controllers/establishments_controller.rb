@@ -15,9 +15,9 @@ class EstablishmentsController < ApplicationController
   end
 
   def new
-    authorize @establishment
     @user = current_user
     @establishment = Establishment.new
+    authorize @establishment
   end
 
   def create
