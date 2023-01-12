@@ -25,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_234143) do
     t.integer "type", default: 0
     t.float "latitude"
     t.float "longitude"
-    t.integer "location_type", default: 0
   end
 
   create_table "favorites", force: :cascade do |t|

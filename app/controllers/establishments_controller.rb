@@ -31,7 +31,7 @@ class EstablishmentsController < ApplicationController
     end
   end
 
-  def toggle_favorite
+  def toggle_favorite?
     @establishment = Establishment.find(params[:id])
     current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
     redirect_to establishment_path(@establishment)
@@ -56,7 +56,7 @@ class EstablishmentsController < ApplicationController
     @establishment.destroy
     redirect_to root_path, status: :see_other
   end
-  
+
   private
 
   def set_establishment
@@ -64,6 +64,6 @@ class EstablishmentsController < ApplicationController
   end
 
   def establishment_params
-   params.require(:establishment).permit(:name, :phone, :address, :location_type, :rating, :image)
+    params.require(:establishment).permit(:name, :phone, :address, :location_type, :rating, :image)
   end
 end

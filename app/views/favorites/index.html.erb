@@ -2,13 +2,14 @@
 this is your pawfect list:
 
 <% @establishments.each do |establishment| %>
-  <div class="card img">
-    <img src="<%= establishment.image %>">
-  </div>
-    <div class="conatiner">
-      <p><%= establishment.address %></p>
-      <p></p><%= establishment.phone %>
-      <p><em><%= establishment.type %></em></p>
+  <div class="container">
+    <div class="card img">
+      <img src="<%= establishment.image %>">
     </div>
-  <div>
+    <p><%= establishment.name %></p>
+    <p><%= establishment.address %></p>
+    <p></p><%= establishment.phone %>
+    <p><em><%= establishment.location_type %></em></p>
+  </div>
+</div>
 <% end %>
