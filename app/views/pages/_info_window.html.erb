@@ -1,2 +1,4 @@
-<h2><%= establishment.name %></h2>
-<p><%= establishment.address %></p>
+<%= link_to establishment_path(establishment) do %>
+    <h2><%= establishment.name %></h2>
+    <p><%= establishment.address %></p>
+<% end %>
