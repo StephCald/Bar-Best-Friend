@@ -7,9 +7,9 @@ class FavoritesController < ApplicationController
     @favorite = policy_scope(Favorite)
     @favoritable_ids.each do |fav|
       establishment = Establishment.find_by(id: fav)
-        if establishment
+      if establishment
         @establishments << establishment
-        end
+      end
 
     end
   end
