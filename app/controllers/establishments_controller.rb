@@ -21,9 +21,9 @@ class EstablishmentsController < ApplicationController
   end
 
   def create
-    authorize @establishment
     @establishment = Establishment.new(establishment_params)
     # establishment.rating = 1 if establishment.rating.empty?
+    authorize @establishment
     if @establishment.save!
       redirect_to establishment_path(@establishment)
     else
