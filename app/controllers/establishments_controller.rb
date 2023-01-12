@@ -44,12 +44,16 @@ class EstablishmentsController < ApplicationController
   end
 
   def update
-    authorize @establishment
-    @establishment.update(establishment_params)
-    if @establishment.update(establishment_params)
-      redirect_to establishment_path(@establishment)
+    if current_user.present?
+      authorize @establishment
+      @establishment.update(establishment_params)
+      if @establishment.update(establishment_params)
+        redirect_to establishment_path(@establishment)
+      else
+        render :edit, status: :unprocessable_entity
+      end
     else
-      render :edit, status: :unprocessable_entity
+     redirect_to root_path
     end
   end
 
