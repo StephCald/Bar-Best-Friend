@@ -1,9 +1,9 @@
 <div id="navbar">
-    <div id="menu_logo">
-      <%= image_tag "https://media.istockphoto.com/id/1208175274/vector/avatar-vector-icon-simple-element-illustrationavatar-vector-icon-material-concept-vector.jpg?s=612x612&w=0&k=20&c=t4aK_TKnYaGQcPAC5Zyh46qqAtuoPcb-mjtQax3_9Xc=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    </div>
   <% if user_signed_in? %>
     <nav>
+      <div id="menu_logo">
+        <%= image_tag "https://media.istockphoto.com/id/1208175274/vector/avatar-vector-icon-simple-element-illustrationavatar-vector-icon-material-concept-vector.jpg?s=612x612&w=0&k=20&c=t4aK_TKnYaGQcPAC5Zyh46qqAtuoPcb-mjtQax3_9Xc=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
       <ul>
         <li><%= link_to "My Pawfect List", user_favorites_path(current_user) %></li>
         <li><%= link_to "+ dog friendly location", new_establishment_path %></li>
@@ -11,7 +11,7 @@
       </ul>
     </nav>
   <% else %>
-    <li class="nav-item">
+    <li >
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </li>
   <% end %>

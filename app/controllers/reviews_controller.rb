@@ -5,11 +5,13 @@ class ReviewsController < ApplicationController
     @review.review_tags << ReviewTag.new
     @tags = Tag.all
     @establishment = Establishment.find(params[:establishment_id])
+    authorize @review
   end
 
 
   def create
     @review = Review.new(review_params)
+    authorize @review
     selected_tags = params[:review][:tag_ids].values
     selected_tags.each do |tag_id|
       @review.review_tags.build({tag_id: tag_id})

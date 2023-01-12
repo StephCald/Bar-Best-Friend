@@ -37,6 +37,9 @@ gem "pundit"
 
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
+# used to filter by location-type tags (testing)
+gem 'acts-as-taggable-on', '~> 9.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
