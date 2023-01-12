@@ -23,11 +23,11 @@ class EstablishmentPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    user.admin
   end
 
   def destroy?
-    user.admin?
+    user.admin
   end
 
   def toggle_favorite?

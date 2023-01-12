@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
-  <% if user_signed_in? %>
+  <% if current_user && current_user.admin? %>
   <%# will polish it till we focusing on the front end %>
    <%= button_to "favorite", toggle_favorite_establishment_path(@establishment), method: :post %>
    <%# please do not change the line below, it is for testing the toggle  %>
@@ -10,18 +10,16 @@
   <div class="card img">
     <img src="<%= @establishment.image %>">
   </div>
-    <div class="conatiner">
-      <p><%= @establishment.address %></p>
-      <p></p><%= @establishment.phone %>
-      <p><em><%= @establishment.location_type %></em></p>
-      <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
-      <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
-    </div>
-  <div>
-
+  <div class="conatiner">
+    <p><%= @establishment.address %></p>
+    <p></p><%= @establishment.phone %>
+    <p><em><%= @establishment.location_type %></em></p>
+    <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
+    <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
   </div>
 </div>
-<div class="container-icons"></div>
+
+<div class="container-icons">
     <div class="icon">
       <i class="fa-solid fa-phone"></i>
       <p>Contact</p>
@@ -33,19 +31,22 @@
       <i class="fa-solid fa-location-arrow"></i>
       <p>Navigate</p>
     </div>
-    <% if policy(@establishment).edit? %>
-      <div class="icon">
-        <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
+    <div class="icon">
+      <% if current_user && current_user.admin? then policy(@establishment).edit? %>
+        <class="icon">
+          <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
         %>
+      <% end %>
     </div>
-    <% end %>
+
     <div class="icon">
       <%= link_to "Delete",
           establishment_path(@establishment),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@establishment).destroy?
+           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.try(:admin?) && policy(@establishment).destroy?
       %>
     </div>
 </div>
+
 <%# Reviews %>
 <div class="container">
   <div class="reviews">
