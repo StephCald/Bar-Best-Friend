@@ -1,10 +1,11 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
+  <% if user_signed_in? %>
   <%# will polish it till we focusing on the front end %>
    <%= button_to "favorite", toggle_favorite_establishment_path(@establishment), method: :post %>
    <%# please do not change the line below, it is for testing the toggle  %>
-   <%# <p>This establishment is in my favorites list <%= current_user.favorited?(@establishment) %></p> %>
-
+   <p>This establishment is in my favorites list <%= current_user.favorited?(@establishment) %></p>
+  <% end %>
 
   <div class="card img">
     <img src="<%= @establishment.image %>">

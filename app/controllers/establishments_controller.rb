@@ -31,8 +31,10 @@ class EstablishmentsController < ApplicationController
     end
   end
 
-  def toggle_favorite?
+  def toggle_favorite
+    @user = current_user
     @establishment = Establishment.find(params[:id])
+    authorize @establishment
     current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
     redirect_to establishment_path(@establishment)
   end
