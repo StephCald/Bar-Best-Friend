@@ -24,11 +24,18 @@
   <div class="card img">
     <img src="<%= @establishment.image %>">
   </div>
-  <div class="conatiner">
+  <div class="container">
     <p><%= @establishment.address %></p>
     <p></p><%= @establishment.phone %>
     <p><em><%= @establishment.location_type %></em></p>
   </div>
+</div>
+<div class="container">
+  <% @tag_count.each do |tag| %>
+    <div class="count">
+      <%= "#{tag[:name]} #{tag[:count]}" %>
+    </div>
+  <% end %>
 </div>
 
 <div class="container-icons">

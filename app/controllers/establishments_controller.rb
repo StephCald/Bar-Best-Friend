@@ -12,6 +12,15 @@ class EstablishmentsController < ApplicationController
   def show
     authorize @establishment
     @user = current_user
+    @establishment = Establishment.find(params[:id])
+      @tag_count = [
+        { name: "Outdoor", count: @establishment.reviews.joins(:review_tags).where(review_tags: { tag_id: 3 }).count},
+        { name: "Water Bowl", count: @establishment.reviews.joins(:review_tags).where(review_tags: { tag_id: 1 }).count },
+        { name: "Indoor", count: @establishment.reviews.joins(:review_tags).where(review_tags: { tag_id: 2 }).count },
+        { name: "Treats", count: @establishment.reviews.joins(:review_tags).where(review_tags: { tag_id: 4 }).count },
+        { name: "Waste Bags", count: @establishment.reviews.joins(:review_tags).where(review_tags: { tag_id: 5 }).count }
+      ]
+      @tag_count = @tag_count.select { |tag| tag[:count] > 0 }
   end
 
   def new
