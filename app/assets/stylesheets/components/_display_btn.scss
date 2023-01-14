@@ -1,0 +1,23 @@
+.map-display-btn {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - var(--scrollbar-gutter, 0%));
+  z-index: 8;
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 33.333%);
+  grid-template-areas:
+    'left center right'
+    'bottom bottom bottom';
+}
+
+.change-display {
+  margin-bottom: 40px;
+  grid-area: center;
+    justify-self: center;
+    align-self: end;
+}
+
+.display-btn {
+  border-radius: 8px;
+
+}

@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :favorites
   end
+
+  get 'toggle_map', to: "pages#toggle_map", as: "toggle_map"
 end
