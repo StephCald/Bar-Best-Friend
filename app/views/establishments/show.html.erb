@@ -1,86 +1,103 @@
 <div class="container">
-  <h1><%= @establishment.name %></h1>
-  <div class="fav-btn">
-    <% if current_user.present? %>
-      <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
-        <% if current_user.favorited?(@establishment) %>
-        <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:rgb(244 244 244)" do %>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: red">
-            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-          </svg>
-          <% end %>
-        <% else %>
-        <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:rgb(244 244 244)" do %>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px; color: red">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-          </svg>
-          add to My Pawfect List
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="card img">
-    <img src="<%= @establishment.image %>">
-  </div>
-  <div class="container">
-    <p><%= @establishment.address %></p>
-    <p></p><%= @establishment.phone %>
-    <p><em><%= @establishment.location_type %></em></p>
-  </div>
-</div>
-<div class="container">
-  <% @tag_count.each do |tag| %>
-    <div class="count">
-      <%= "#{tag[:name]} #{tag[:count]}" %>
-    </div>
-  <% end %>
-</div>
-
-<div class="container-icons">
-    <div class="icon">
-      <i class="fa-solid fa-phone"></i>
-      <p>Contact</p>
-    </div>
-    <div class="icon">
-      <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
-    </div>
-    <div class="icon">
-      <i class="fa-solid fa-location-arrow"></i>
-      <p>Navigate</p>
-    </div>
-    <div class="icon">
-      <% if current_user && current_user.admin? then policy(@establishment).edit? %>
-        <class="icon">
-          <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
-      %>
-      <% end %>
-    </div>
-
-    <div class="icon">
-      <%= link_to "Delete",
-          establishment_path(@establishment),
-           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.try(:admin?) && policy(@establishment).destroy?
-      %>
-    </div>
-</div>
-
-<%# Reviews %>
-<div class="container">
-  <div class="reviews">
-    <% if @establishment.reviews.count == 0 %>
-      <p>Be the first to leave a review on this list</p>
-    <% else %>
-      <% @establishment.reviews.each do |review| %>
-      <div>
-        <p><%= review.user.username %> - <%= review.comments %></p>
-         <% review.review_tags.each do |review_tag| %>
-          <p><%= review_tag.tag.name %></p>
+  <div id="card-show">
+    <h1><%= @establishment.name %></h1>
+    <div class="fav-btn">
+      <% if current_user.present? %>
+        <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
+          <% if current_user.favorited?(@establishment) %>
+            <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:rgb(244 244 244)" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: red">
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
             <% end %>
-          </div>
+          <% else %>
+            <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:rgb(244 244 244)" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px; color: red">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            <% end %>
+          <% end %>
         <% end %>
-    <% end %>
-    <%= link_to 'Leave a Review', new_establishment_review_path(@establishment) %>
+      <% end %>
+    </div>
+
+    <div class="card">
+      <img src="<%= @establishment.image %>">
+    </div>
+
+    <div class="container d-flex flex-row justify-content-between">
+      <% @tag_count.each do |tag| %>
+        <div class="count">
+          <%= "#{tag[:name]} #{tag[:count]}" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="container d-flex flex-row justify-content-between">
+      <div class="text-start">
+        <p><%= @establishment.address %></p>
+      </div>
+      <div class="text-end">
+        <p><em><%= @establishment.location_type %></em></p>
+        <p></p><%= @establishment.phone %>
+      </div>
+    </div>
+
+    <div class="container-icons">
+      <div class="icon">
+        <%= button_to "tel:#{@establishment.phone}", class: 'btn btn-secondary phone-number-class', method: :get do %>
+          <i class="fa-solid fa-phone"></i>
+        <% end %>
+      </div>
+      <div class="icon">
+        <%= button_to root_path, :class => "btn btn-secondary", :method => :get do %>
+          <span class="fa-solid fa-house"></span>
+        <% end %>
+      </div>
+      <div class="icon btn btn-secondary">
+        <i class="fa-solid fa-location-arrow"></i>
+      </div>
+      <div class="icon">
+        <% if current_user && current_user.admin? then policy(@establishment).edit? %>
+          <%= button_to edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get do %>
+            <span class="fa-solid fa-pen-to-square"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="icon">
+        <% if current_user.try(:admin?) && policy(@establishment).destroy? %>
+          <%= button_to establishment_path(@establishment), :class => "btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <span class="fa-solid fa-x "></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div id="card-show">
+    <%# Reviews %>
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'btn btn-secondary', method: :get %>
+      </div>
+        <% if @establishment.reviews.count == 0 %>
+          <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
+        <% else %>
+            <% @establishment.reviews.each do |review| %>
+              <div class="card-review d-flex flex-row mx-2 justify-space-between">
+                <h7><%= review.user.username %></h7>
+                <% review.review_tags.each do |review_tag| %>
+                  <div class="count">
+                    <p><%= review_tag.tag.name %></p>
+                  </div>
+                <% end %>
+                <%= review.comments %>
+              </div>
+            <% end %>
+        <% end %>
+    </div>
   </div>
 </div>
