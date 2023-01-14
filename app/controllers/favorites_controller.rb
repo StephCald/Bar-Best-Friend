@@ -10,12 +10,19 @@ class FavoritesController < ApplicationController
       if establishment
         @establishments << establishment
       end
-
     end
   end
 
-  # def show
-  #   @user = current_user
-  #   @establishment = Establishment.find(params[:id])
-  # end
+  def delete_from_list
+    @user = current_user
+    @establishment = Establishment.find(params[:id])
+    @user.unfavorite(@establishment)
+    redirect_to user_favorites_path, status: :see_other
+  end
+
+  private
+
+  def establishment_params
+    params.require(:establishment).permit(:name, :phone, :address, :location_type, :rating, :image)
+  end
 end

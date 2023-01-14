@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :establishments, except: :index do
     resources :reviews, only: %i[new create]
   end
-  
+
   # resources :review_tags, only: [:create, :new] do
   # end
 
@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :favorites, only: :index
+    resources :favorites
   end
 end
