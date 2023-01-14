@@ -12,12 +12,12 @@ Rails.application.routes.draw do
 
   resources :establishments, only: :index do
     member do
-      post 'toggle_favorite', to: "establishments#toggle_favorite"
+      post 'toggle', to: "favorites#toggle"
     end
   end
 
   resources :users do
-    resources :favorites, only: :index
+    resources :favorites
   end
 
   get 'toggle_map', to: "pages#toggle_map", as: "toggle_map"

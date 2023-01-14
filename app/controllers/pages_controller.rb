@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     if params[:location_type]
       @establishments = Establishment.where(location_type: params[:location_type])
     else
-      @establishments = Establishment.where(location_type: "cafe")
+      @establishments = Establishment.all
+      #where(location_type: "cafe")
     end
     @markers = @establishments.geocoded.map do |establishment|
       {

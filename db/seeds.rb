@@ -26,6 +26,8 @@
   indoor = Tag.create(name: "Indoor")
   outdoor = Tag.create(name: "Outdoor")
   treats = Tag.create(name: "Treats")
+  wastebag = Tag.create(name: "Waste Bags")
+
   puts "tags created"
 
   review = Review.create(comments: "Staff was so friendly to my dog and they even have a special dog menu.",user_id: 1, establishment_id: 1)

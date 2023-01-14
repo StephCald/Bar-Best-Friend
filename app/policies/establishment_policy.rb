@@ -30,8 +30,7 @@ class EstablishmentPolicy < ApplicationPolicy
     user.admin
   end
 
-  def toggle_favorite?
-    user
+  def toggle?
+    true
   end
-
 end

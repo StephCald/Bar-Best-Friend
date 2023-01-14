@@ -4,7 +4,6 @@
     <img class= "avatar-homepage" src="https://st2.depositphotos.com/1326558/6896/i/600/depositphotos_68966205-stock-photo-black-pug-dog.jpg" alt="pug" width="400" height="300">
   <h5>Find all your local dog-friendly places in one spot!</h5>
 </div>
-  <%= render 'searchbar' %>
 
 <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
   <div class="container-icons">
@@ -61,20 +60,22 @@
 
   <% else %>
 
-    <div class="container" id='list'>
-      <div class="cards">
+    <div class="container">
+      <div class="row">
         <% @establishments.each do |establishment| %>
-        <div class="card-trip">
-          <div class="card-trip img">
-            <img src="<%= establishment.image %>">
-          </div>
-          <%= link_to establishment_path(establishment) do %>
-            <div class="card-product-infos">
-              <h2> <%= establishment.name %> </h2>
-              <p><em><%= establishment.location_type  %></em></p>
-              <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
-            </div>
-          <% end %>
+          <div class="col d-flex justify-content-center my-3">
+            <%= link_to establishment_path(establishment) do %>
+              <div class="card-trip ">
+                <img src="<%= establishment.image %>">
+                <div class="card-product-infos">
+                  <div>
+                    <h2> <%= establishment.name %> </h2>
+                    <p><em><%= establishment.location_type  %></em></p>
+                  </div>
+                  <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
+                </div>
+              /div>
+            <% end %>
           </div>
         <% end %>
       </div>
