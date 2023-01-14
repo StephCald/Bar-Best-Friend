@@ -10,4 +10,7 @@ class FavoritePolicy < ApplicationPolicy
     true
   end
 
+  # def toggle?
+  #   true
+  # end
 end
