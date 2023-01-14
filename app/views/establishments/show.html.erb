@@ -10,13 +10,20 @@
   <div class="card img">
     <img src="<%= @establishment.image %>">
   </div>
-  <div class="conatiner">
+  <div class="container">
     <p><%= @establishment.address %></p>
     <p></p><%= @establishment.phone %>
     <p><em><%= @establishment.location_type %></em></p>
     <%# <%= link_to "Favorite", favorite_path(@establishment), method: :establishment %>
     <%# <%= link_to "Unfavorite", unfavorite_path(@establishment), method: :establishment %>
   </div>
+</div>
+<div class="container">
+  <% @tag_count.each do |tag| %>
+    <div class="count">
+      <%= "#{tag[:name]} #{tag[:count]}" %>
+    </div>
+  <% end %>
 </div>
 
 <div class="container-icons">
