@@ -6,22 +6,42 @@
 </div>
   <%= render 'searchbar' %>
 
-<div class="container-icons">
-  <div class="icon">
-    <i class="fa-solid fa-wine-glass"></i>
-    <p>bars</p>
-  </div>
-  <div class="icon">
-    <i class="fa-solid fa-umbrella-beach"></i>
-    <p>beaches</p>
-  </div>
-  <div class="icon">
-    <i class="fa-solid fa-person-hiking"></i>
-    <p>nature trails</p>
-  </div>
-  <div class="icon">
-    <i class="fa-solid fa-tree"></i>
-    <p>parks</p>
+<div class="container">
+  <div class="container-icons">
+    <%= link_to root_path(location_type: "cafe") do %>
+      <div class="icon">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <p>cafe</p>
+      </div>
+    <% end %>
+
+    <%= link_to root_path(location_type: "bar") do %>
+      <div class="icon">
+        <i class="fa-solid fa-wine-glass"></i>
+        <p>bars</p>
+      </div>
+    <% end %>
+
+    <%= link_to root_path(location_type: "beach") do %>
+      <div class="icon">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>beaches</p>
+      </div>
+    <% end %>
+
+    <%= link_to root_path(location_type: "trail") do %>
+      <div class="icon">
+        <i class="fa-solid fa-person-hiking"></i>
+        <p>nature trails</p>
+      </div>
+    <% end %>
+
+    <%= link_to root_path(location_type: "park") do %>
+      <div class="icon">
+        <i class="fa-solid fa-tree"></i>
+        <p>parks</p>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -46,5 +66,5 @@
         </div>
       <% end %>
     <% end %>
-    </div>
+  </div>
 </div>
