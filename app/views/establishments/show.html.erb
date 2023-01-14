@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
-  <% if current_user && current_user.admin? %>
+  <% if current_user %>
   <%# will polish it till we focusing on the front end %>
    <%= button_to "favorite", toggle_favorite_establishment_path(@establishment), method: :post %>
    <%# please do not change the line below, it is for testing the toggle  %>
@@ -35,7 +35,7 @@
       <% if current_user && current_user.admin? then policy(@establishment).edit? %>
         <class="icon">
           <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
-        %>
+      %>
       <% end %>
     </div>
 

@@ -3,7 +3,11 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @establishments = Establishment.all
+    if params[:location_type]
+      @establishments = Establishment.where(location_type: params[:location_type])
+    else
+      @establishments = Establishment.where(location_type: "cafe")
+    end
     @markers = @establishments.geocoded.map do |establishment|
       {
         lat: establishment.latitude,
