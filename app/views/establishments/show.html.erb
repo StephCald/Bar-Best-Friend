@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @establishment.name %></h1>
   <div class="fav-btn">
-    <% if current_user && current_user.present? %>
-      <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
+    <% if current_user && current_user.admin? %>
+      <%= turbo_frame_tag user_id(@establishment, :favourite) do %>
         <% if current_user.favorited?(@establishment) %>
         <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:rgb(244 244 244)" do %>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: red">
