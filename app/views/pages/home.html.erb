@@ -6,6 +6,7 @@
 </div>
   <%= render 'searchbar' %>
 
+<%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
   <div class="container-icons">
     <%= link_to root_path(location_type: "cafe") do %>
       <div class="icon">
@@ -43,26 +44,41 @@
     <% end %>
   </div>
 
-<div data-controller="map"
-    id="map"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-map-markers-value="<%= @markers.to_json %>"
-    style="width: 100%; height: 400px;">
-</div>
-
-<div class="container">
-  <div class="card-trip">
-    <% @establishments.each do |establishment| %>
-      <div class="card-trip img">
-        <img src="<%= establishment.image %>">
-      </div>
-      <%= link_to establishment_path(establishment) do %>
-        <div class="card-product-infos">
-          <h2> <%= establishment.name %> </h2>
-          <p><em><%= establishment.location_type  %></em></p>
-          <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
-        </div>
-      <% end %>
-    <% end %>
+  <div class='map-display-btn'>
+    <div class="change-display">
+      <%= link_to 'toggle map', toggle_map_path, class: 'btn btn-danger' %>
+    </div>
   </div>
-</div>
+
+  <% if session[:show_map] %>
+
+    <div data-controller="map"
+        id="map"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-markers-value="<%= @markers.to_json %>"
+        style="width: 100%; height: 400px;">
+    </div>
+
+  <% else %>
+
+    <div class="container" id='list'>
+      <div class="cards">
+        <% @establishments.each do |establishment| %>
+        <div class="card-trip">
+          <div class="card-trip img">
+            <img src="<%= establishment.image %>">
+          </div>
+          <%= link_to establishment_path(establishment) do %>
+            <div class="card-product-infos">
+              <h2> <%= establishment.name %> </h2>
+              <p><em><%= establishment.location_type  %></em></p>
+              <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>

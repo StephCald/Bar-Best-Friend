@@ -17,4 +17,10 @@ class PagesController < ApplicationController
       }
     end
   end
+
+  def toggle_map
+    session[:show_map] = false if session[:show_map].nil?
+    session[:show_map] = !session[:show_map]
+    redirect_back fallback_location: root_path
+  end
 end

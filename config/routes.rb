@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :establishments, except: :index do
     resources :reviews, only: %i[new create]
   end
-  
+
   # resources :review_tags, only: [:create, :new] do
   # end
 
@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :favorites, only: :index
   end
+
+  get 'toggle_map', to: "pages#toggle_map", as: "toggle_map"
 end
