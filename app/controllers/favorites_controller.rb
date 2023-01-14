@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
+
   def index
     @user = current_user
     @favoritable_ids = Favorite.where(favoritor_id: @user.id).pluck(:favoritable_id)
@@ -13,11 +15,12 @@ class FavoritesController < ApplicationController
     end
   end
 
-  def delete_from_list
+  def toggle
     @user = current_user
     @establishment = Establishment.find(params[:id])
-    @user.unfavorite(@establishment)
-    redirect_to user_favorites_path, status: :see_other
+    authorize @establishment
+    current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
+    redirect_back(fallback_location: establishment_path(@establishment))
   end
 
   private
