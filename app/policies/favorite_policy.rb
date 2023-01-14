@@ -9,8 +9,4 @@ class FavoritePolicy < ApplicationPolicy
   def index
     true
   end
-
-  # def toggle?
-  #   true
-  # end
 end
