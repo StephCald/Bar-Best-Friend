@@ -50,11 +50,11 @@
 </div>
 
 <div class="container">
-  <div class="cards">
+  <div class="row">
     <% @establishments.each do |establishment| %>
-      <div class="col-sm">
+      <div class="col d-flex justify-content-center my-3">
         <%= link_to establishment_path(establishment) do %>
-          <div class="card-trip">
+          <div class="card-trip ">
             <img src="<%= establishment.image %>">
             <div class="card-product-infos">
               <div>
@@ -63,7 +63,7 @@
               </div>
               <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
             </div>
-          </div>
+          /div>
         <% end %>
       </div>
     <% end %>
