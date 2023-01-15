@@ -1,18 +1,20 @@
-<h1>this page shows users favorite list</h1>
-this is your pawfect list:
+<div class="container">
+  <h1>this page shows users favorite list</h1>
+  this is your pawfect list:
 
-<% @establishments.each do |establishment| %>
-  <div class="container">
-    <div class="card img">
-      <img src="<%= establishment.image %>">
+  <% @establishments.each do |establishment| %>
+    <div class="container">
+      <div class="card img">
+        <img src="<%= establishment.image %>">
+      </div>
+      <p><%= establishment.name %></p>
+      <p><%= establishment.address %></p>
+      <p></p><%= establishment.phone %>
+      <p><em><%= establishment.location_type %></em></p>
     </div>
-    <p><%= establishment.name %></p>
-    <p><%= establishment.address %></p>
-    <p></p><%= establishment.phone %>
-    <p><em><%= establishment.location_type %></em></p>
   </div>
-</div>
-<% end %>
+  <% end %>
 
-<div class="icon">
-      <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
+  <div class="icon">
+        <%= button_to "Return" , root_path, :class => "btn btn-secondary",  :method => :get %>
+</div>
