@@ -10,6 +10,7 @@
 .tag-selector + label {
   cursor: pointer;
   display: grid;
+  place-items: center;
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
