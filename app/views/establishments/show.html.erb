@@ -48,16 +48,14 @@
     </div>
     <div class="icon">
       <% if current_user && current_user.admin? then policy(@establishment).edit? %>
-        <class="icon">
           <%= button_to "Edit",edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get
       %>
       <% end %>
     </div>
 
     <div class="icon">
-      <%= link_to "Delete",
-          establishment_path(@establishment),
-           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.try(:admin?) && policy(@establishment).destroy?
+      <%= link_to "Delete", establishment_path(@establishment),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.try(:admin?) && policy(@establishment).destroy?
       %>
     </div>
 </div>
@@ -71,7 +69,7 @@
       <% @establishment.reviews.each do |review| %>
       <div>
         <p><%= review.user.username %> - <%= review.comments %></p>
-         <% review.review_tags.each do |review_tag| %>
+          <% review.review_tags.each do |review_tag| %>
           <p><%= review_tag.tag.name %></p>
             <% end %>
           </div>
