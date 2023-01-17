@@ -1,6 +1,6 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: :toggle_favorite
+  skip_before_action :authenticate_user!, only: [:show]
 
   def index
     @user = current_user
@@ -35,18 +35,11 @@ class EstablishmentsController < ApplicationController
     authorize @establishment
     if @establishment.save!
       redirect_to establishment_path(@establishment)
-    else
+    elsedevde
       render :new, status: :unprocessable_entity
     end
   end
 
-  def toggle_favorite
-    @user = current_user
-    @establishment = Establishment.find(params[:id])
-    authorize @establishment
-    current_user.favorited?(@establishment) ? current_user.unfavorite(@establishment) : current_user.favorite(@establishment)
-    redirect_to establishment_path(@establishment)
-  end
 
   def edit
     authorize @establishment

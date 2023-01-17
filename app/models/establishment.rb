@@ -9,7 +9,7 @@ class Establishment < ApplicationRecord
   }
   self.inheritance_column = :_type_disabled
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   acts_as_favoritable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
