@@ -1,10 +1,9 @@
 <div class="container">
-  <h1>Bar's Best Friend</h1>
-  <p>Never leave your furry family member home alone again!</p>
-    <img class= "avatar-homepage" src="https://st2.depositphotos.com/1326558/6896/i/600/depositphotos_68966205-stock-photo-black-pug-dog.jpg" alt="pug" width="400" height="300">
+  <h1><%= image_tag "bbf.png", class: "avatar-homepage" %></h1>
   <h5>Find all your local dog-friendly places in one spot!</h5>
+  <h6>Never leave your furry family member home alone again!</h6>
 </div>
-
+  <%# <%= render 'searchbar' %>
 <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
   <div class="container-icons">
     <%= link_to root_path(location_type: "cafe") do %>

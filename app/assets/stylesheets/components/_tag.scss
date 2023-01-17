@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 .count {
-  display: inline-block;
+  display: grid;
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
@@ -41,4 +41,20 @@
   border: 1px solid #7E73FF;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  width: fit-content; /* Add this line */
+  margin-right: 0.6rem; /* Add this line */
+}
+.placeholder-text::placeholder {
+  font-size: smaller;
+  font-style: italic;
+}
+.container-count {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex-wrap: wrap;
 }
