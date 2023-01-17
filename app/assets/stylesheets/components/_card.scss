@@ -83,11 +83,12 @@
   border-radius: 3px;
   margin: 0 auto;
   width: auto;
+  position: relative;
 }
 
-#card-show > h1, .fav-btn {
-  text-align: center;
-}
+// #card-show > h1, .fav-btn {
+//   text-align: center;
+// }
 
 .card-review {
   background-color: white;
