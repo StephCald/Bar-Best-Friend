@@ -19,12 +19,22 @@
           <% end %>
         <% end %>
       <% end %>
-      
     </div>
+      <div class="container-icon">
+        <% if current_user && current_user.admin? then policy(@establishment).edit? %>
+          <%= link_to edit_establishment_path(@establishment), method: :get do %>
+            <span class="fa-solid fa-pen-to-square"></span>
+          <% end %>
+        <% end %>
+        <% if current_user.try(:admin?) && policy(@establishment).destroy? %>
+          <%= link_to establishment_path(@establishment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %></li>
+        <% end %>
+      </div>
     <div class="card">
-      <img src="<%= @establishment.image %>">
+        <img src="<%= @establishment.image %>">
     </div>
-
     <div class="container d-flex flex-row justify-content-between">
       <% @tag_count.each do |tag| %>
         <div class="count">
@@ -49,27 +59,10 @@
           <i class="fa-solid fa-phone"></i>
         <% end %>
       </div>
-      <div class="icon">
-        <%= button_to root_path, :class => "btn btn-secondary", :method => :get do %>
-          <span class="fa-solid fa-house"></span>
-        <% end %>
-      </div>
+
+
       <div class="icon btn btn-secondary">
         <i class="fa-solid fa-location-arrow"></i>
-      </div>
-      <div class="icon">
-        <% if current_user && current_user.admin? then policy(@establishment).edit? %>
-          <%= button_to edit_establishment_path(@establishment), :class => "btn btn-secondary", method: :get do %>
-            <span class="fa-solid fa-pen-to-square"></span>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="icon">
-        <% if current_user.try(:admin?) && policy(@establishment).destroy? %>
-          <%= button_to establishment_path(@establishment), :class => "btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <span class="fa-solid fa-x "></span>
-          <% end %>
-        <% end %>
       </div>
     </div>
   </div>
@@ -81,14 +74,14 @@
     <%# Reviews %>
     <div class="container">
       <div class="d-flex justify-content-center">
-        <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'btn btn-secondary', method: :get %>
+        <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-btn', method: :get %>
       </div>
         <% if @establishment.reviews.count == 0 %>
           <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
         <% else %>
             <% @establishment.reviews.each do |review| %>
               <div class="card-review d-flex flex-row mx-2 justify-space-between">
-                <h7><%= review.user.username %></h7>
+                <h6><%= review.user.username %></h6>
                 <% review.review_tags.each do |review_tag| %>
                   <div class="count">
                     <p><%= review_tag.tag.name %></p>

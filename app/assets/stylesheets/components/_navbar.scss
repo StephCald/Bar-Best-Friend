@@ -13,14 +13,15 @@
 
 #navbar {
   display: block;
-  position: relative;
+  position: sticky;
+  top: 0;
   right: 0;
 
   height: 4.25em;
   width: 100%;
   overflow: hidden;
 
-  margin: 1em 0em;
+  margin-bottom: 1em;
   border-radius: 10px;
 
   transition: all .63s;

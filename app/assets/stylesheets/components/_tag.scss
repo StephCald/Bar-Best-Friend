@@ -9,6 +9,7 @@
 
 .tag-selector + label {
   cursor: pointer;
+  place-items: center;
   display: grid;
   font-size: 0.7rem;
   border-radius: 50rem;
@@ -33,6 +34,7 @@
 }
 .count {
   display: grid;
+  place-items: center;
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
@@ -41,8 +43,8 @@
   border: 1px solid #7E73FF;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
-  width: fit-content; /* Add this line */
-  margin-right: 0.6rem; /* Add this line */
+  width: fit-content;
+  margin-right: 0.6rem;
 }
 .placeholder-text::placeholder {
   font-size: smaller;
@@ -51,6 +53,7 @@
 .container-count {
   margin-top: 50px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   justify-content: left;
   align-items: center;
