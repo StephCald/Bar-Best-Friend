@@ -5,5 +5,24 @@
   font-size: 15px;
   background-color: rgb(223, 219, 219);
   border-radius: 20px 20px 3px 3px;
-
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  float: right;
+  border-radius: 50%;
+}
+.logo {
+  float: left;
+  width: 80px;
+  margin: -2px;
+}
+.fa-solid.fa-house {
+  font-size: 1.9em;
+}
+.fa-solid.fa-arrow-right-from-bracket {
+  font-size: 1.9em;
+}
+.fa-solid.fa-circle-plus {
+  font-size: 2em;
 }
