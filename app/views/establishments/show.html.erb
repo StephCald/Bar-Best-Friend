@@ -1,6 +1,8 @@
 <div class="container">
   <div id="card-show">
     <h1><%= @establishment.name %></h1>
+    <div class="card">
+      <img src="<%= @establishment.image %>">
     <div class="fav-btn show">
       <% if current_user.present? %>
         <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
@@ -20,8 +22,6 @@
         <% end %>
       <% end %>
     </div>
-    <div class="card">
-      <img src="<%= @establishment.image %>">
     </div>
 
     <div class="container d-flex flex-row justify-content-between">
