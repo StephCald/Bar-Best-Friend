@@ -19,7 +19,7 @@
           <% end %>
         <% end %>
       <% end %>
-      
+
     </div>
     <div class="card">
       <img src="<%= @establishment.image %>">
@@ -83,21 +83,18 @@
       <div class="d-flex justify-content-center">
         <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'btn btn-secondary', method: :get %>
       </div>
-        <% if @establishment.reviews.count == 0 %>
-          <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
-        <% else %>
-            <% @establishment.reviews.each do |review| %>
-              <div class="card-review d-flex flex-row mx-2 justify-space-between">
-                <h7><%= review.user.username %></h7>
-                <% review.review_tags.each do |review_tag| %>
-                  <div class="count">
-                    <p><%= review_tag.tag.name %></p>
-                  </div>
-                <% end %>
-                <%= review.comments %>
-              </div>
-            <% end %>
+      <% if @establishment.reviews.count == 0 %>
+        <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
+      <% else %>
+        <% @establishment.reviews.each do |review| %>
+          <% unless review.comments == "" then %>
+            <div class="card-review">
+              <h7><strong><%= review.user.username %>:</strong></h7>
+              <%= review.comments %>
+            </div>
+          <% end %>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
