@@ -34,8 +34,8 @@
   cursor: pointer;
 }
 .count {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-wrap: nowrap;
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
@@ -46,7 +46,23 @@
   margin-bottom: 0.4rem;
   width: fit-content;
   margin-right: 0.6rem;
+  width: 130px;
+  height: 20px;
+  line-height: 11px;
+  text-align: center;
+  font-size: x-small;
 }
+
+.tag-count {
+  display: flex;
+  background-color: #c3a2eb;
+  padding: 0.1rem 0.9rem;
+  border-radius: 9px;
+  margin-left: 0.6rem;
+  color: black;
+}
+
+
 .placeholder-text::placeholder {
   font-size: smaller;
   font-style: italic;
