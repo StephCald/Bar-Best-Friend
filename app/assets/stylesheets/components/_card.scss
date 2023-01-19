@@ -33,8 +33,11 @@
   border-radius: 3px;
   margin: 0 auto;
   width: 300px;
+  position: relative;
 }
-
+.card{
+  position: relative;
+}
 .card-trip > img {
   height: 200px;
   width: 100%;
@@ -77,17 +80,18 @@
 
 #card-show {
   overflow: hidden;
-  background: rgb(210, 210, 210);
+  background: rgb(255, 254, 254);
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 15px;
-  border-radius: 3px;
+  border-radius: 16px;
   margin: 0 auto;
   width: auto;
+  position: relative;
 }
 
-#card-show > h1, .fav-btn {
-  text-align: center;
-}
+// #card-show > h1, .fav-btn {
+//   text-align: center;
+// }
 
 .card-review {
   background-color: white;

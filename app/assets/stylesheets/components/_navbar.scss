@@ -12,19 +12,21 @@
 // }
 
 #navbar {
-  display: block;
-  position: relative;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   right: 0;
-
-  height: 4.25em;
-  width: 100%;
-  overflow: hidden;
-
-  margin: 1em 0em;
+  padding: 1em 1em;
   border-radius: 10px;
-
   transition: all .63s;
   background-color: white;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    width: unset;
+  }
 }
 
 #menu_logo {
