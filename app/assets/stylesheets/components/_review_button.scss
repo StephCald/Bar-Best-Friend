@@ -1,0 +1,18 @@
+.review-button {
+  box-shadow: 0px 0px 3px -1px #615acc;
+  border-radius: 5px;
+  border: 1px solid #615acc;
+  cursor: pointer;
+  color: #000000;
+  font-size: 15px;
+  padding: 8px 11px;
+}
+
+.review-button:hover {
+  background-color: #615acc;
+}
+
+.review-button:active {
+  position: relative;
+  top: 1px;
+}
