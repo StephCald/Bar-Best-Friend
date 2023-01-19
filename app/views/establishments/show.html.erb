@@ -1,6 +1,23 @@
 <div class="container">
   <div id="card-show">
     <h1><%= @establishment.name %></h1>
+    <div class="container-icon">
+  <div class="dropdown">
+    <i class="fa-solid fa-ellipsis-h"></i>
+    <div class="dropdown-content" style="display: none;">
+      <% if current_user && current_user.admin? then policy(@establishment).edit? %>
+        <%= link_to edit_establishment_path(@establishment), method: :get do %>
+          <span class="fa-solid fa-pen-to-square"></span>
+        <% end %>
+      <% end %>
+      <% if current_user.try(:admin?) && policy(@establishment).destroy? %>
+        <%= link_to establishment_path(@establishment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
     <div class="card">
       <img src="<%= @establishment.image %>">
     <div class="fav-btn show">
@@ -22,27 +39,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="container-icon">
-  <div class="dropdown">
-    <i class="fa-solid fa-ellipsis-h"></i>
-    <div class="dropdown-content" style="display: none;">
-      <% if current_user && current_user.admin? then policy(@establishment).edit? %>
-        <%= link_to edit_establishment_path(@establishment), method: :get do %>
-          <span class="fa-solid fa-pen-to-square"></span>
-        <% end %>
-      <% end %>
-      <% if current_user.try(:admin?) && policy(@establishment).destroy? %>
-        <%= link_to establishment_path(@establishment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
 
-    <div class="card">
-        <img src="<%= @establishment.image %>">
-    </div>
  <div class="container">
   <% @tag_count.each do |tag| %>
     <div class="count d-flex justify-content-between">
