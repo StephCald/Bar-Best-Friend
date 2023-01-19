@@ -1,27 +1,19 @@
 <div id="navbar" class="navbar">
-        <%= image_tag "bbf.png", class: "logo" %>
+
+        <%= link_to root_path do %>
+          <%= image_tag "bbf.png", class: "logo" %>
+        <% end %>
+
+
   <% if user_signed_in? %>
-        <ul>
-      <li><%= link_to root_path do %>
-      <i class="fa-solid fa-house"></i>
-      <% end %></li>
-        <%# <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}</li> %>
-      <li><%= link_to user_favorites_path(current_user) do %>
-        <%= image_tag "bbf3.png", class: "icon" %>
-      <% end %></li>
-      <li><%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      <% end %></li>
-        <%# <><%= link_to "My Pawfect List", user_favorites_path(current_user) %>
-        <%# <li><%= link_to "Submit", new_establishment_path</li> %>
-      <li><%= link_to new_establishment_path do %>
-        <i class="fa-solid fa-circle-plus"></i>
-      <% end %></li>
-      </ul>
-    </nav>
+    <ul class="flex items-center justify-end">
+
+      <%= render 'shared/navbar_dropdown' %>
+    </ul>
   <% else %>
     <li >
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     </li>
   <% end %>
+
 </div>
