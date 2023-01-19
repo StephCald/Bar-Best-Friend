@@ -1,13 +1,12 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[home toggle_map]
 
   def home
     @user = current_user
     if params[:location_type]
       @establishments = Establishment.where(location_type: params[:location_type])
     else
-      @establishments = Establishment.all
-      #where(location_type: "cafe")
+      @establishments = Establishment.where(location_type: "cafe")
     end
     @markers = @establishments.geocoded.map do |establishment|
       {
@@ -20,6 +19,7 @@ class PagesController < ApplicationController
   end
 
   def toggle_map
+    # Need to toggle with out signin in (caused by session)
     session[:show_map] = false if session[:show_map].nil?
     session[:show_map] = !session[:show_map]
     redirect_back fallback_location: root_path

@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://cdn.tailwindcss.com" data-turbo-track=“reload”></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= javascript_include_tag "application", data: { "turbo-track": "reload" }, defer: true %>
@@ -40,9 +41,9 @@
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-     <%= render 'layouts/footer' %>
+    <div style='min-height: 100vh;'>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
