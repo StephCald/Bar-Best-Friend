@@ -5,7 +5,7 @@
 </div>
   <%# <%= render 'searchbar' %>
 <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
-  <div class="container-icons">
+  <div class="container-icons icon-background">
     <%= link_to root_path(location_type: "cafe") do %>
       <div class="icon">
         <i class="fa-solid fa-mug-saucer"></i>
@@ -96,7 +96,7 @@
                 </div>
               <% end %>
             </div>
-           </div>
+          </div>
         <% end %>
       </div>
     </div>

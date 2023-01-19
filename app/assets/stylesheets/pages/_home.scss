@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .container {
-  margin-top: 50px;
+  margin-top: 17px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,11 +9,12 @@
 }
 
 .container-icons {
-  margin-top: 30px;
+  margin-top: 7px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100px;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.19);
+  height: 71px;
   flex-grow: 1;
   padding: 0px;
   a {
