@@ -52,8 +52,13 @@
         <% end %>
       <% end %>
     </div>
-  </div>
-
+</div>
+ <div class="container">
+  <% @tag_count.each do |tag| %>
+    <div class="count d-flex justify-content-between">
+      <%= "#{tag[:name]}" %> <i class="fa-sharp fa-solid fa-badge-check"></i> <span class="tag-count ml-2"> <%= "#{tag[:count]}" %> </span>
+    </div>
+  <% end %>
 </div>
     <div>
       <div class="text-start my-2 text-muted">
@@ -71,8 +76,8 @@
           <i class="fa-solid fa-phone"></i>
         <% end %>
       </div>
-      <div class="font-icons">
-        <i class="fa-solid fa-location-arrow"></i>
+      <div>
+        <%= link_to "<i class='fa-solid fa-location-arrow'></i>".html_safe, "https://www.google.com/maps?q=#{@establishment.latitude},#{@establishment.longitude}", class: "font-icons" %>
       </div>
     </div>
   </div>
