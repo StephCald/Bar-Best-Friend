@@ -39,10 +39,6 @@
     </div>
   </div>
 </div>
-
-    <div class="card">
-        <img src="<%= @establishment.image %>">
-    </div>
  <div class="container">
   <% @tag_count.each do |tag| %>
     <div class="count d-flex justify-content-between">
@@ -66,8 +62,8 @@
           <i class="fa-solid fa-phone"></i>
         <% end %>
       </div>
-      <div class="font-icons">
-        <i class="fa-solid fa-location-arrow"></i>
+      <div>
+        <%= link_to "<i class='fa-solid fa-location-arrow'></i>".html_safe, "https://www.google.com/maps?q=#{@establishment.latitude},#{@establishment.longitude}", class: "font-icons" %>
       </div>
     </div>
   </div>
