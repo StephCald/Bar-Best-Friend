@@ -3,7 +3,7 @@
   margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: space-around;
   height: 100px;
-  // width: fit-content;
   flex-grow: 1;
   padding: 0px;
   a {
