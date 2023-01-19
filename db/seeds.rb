@@ -10,6 +10,13 @@
   Establishment.create(name: "Mathias Walking Track", address: "Mathias Rd, Olinda, VIC", phone: "0412 099 478", rating: "5", location_type: "trail", image: "https://explorethedandenongs.com.au/wp-content/uploads/2019/03/Mathias-Walking-Track.jpg")
   Establishment.create(name: "The Tipsy Cow", address: "359 Bay st, Port Melbourne, VIC", phone: "0483 372 222", rating: "5", location_type: "bar", image: "https://eatdrinkcheap.com.au/images/venue/the-tipsy-cow-port-melbourne.jpg")
   Establishment.create(name: "The Shady Lady", address: "36 Johnston St, Fitzroy, VIC", phone: "0421 228 482", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/melbourne/images/2019/07/26/145554-7364-135842-3778-theshadylady_hengelhardt_019_lx2fSME.jpg")
+  Establishment.create(name: "Lorne Dog Beach", address: "Lorne VIC 3232", phone: "0487 236 493", rating: "4", location_type: "beach", image: "https://www.akc.org/wp-content/uploads/2019/02/NomNomNow_Dalmatian.jpeg")
+  Establishment.create(name: "Yarra Park Dog Off Leash Area", address: "56 Vale St S, East Melbourne, VIC", phone: "0312 983 138", rating: "4", location_type: "park", image: "https://www.dogingtonpost.com/wp-content/uploads/2018/03/dogpark_feature-min.jpg")
+  Establishment.create(name: "Clayton Reserve Fenced Dog Park", address: "201-241 Macaulay Rd, North Melbourne, VIC", phone: "0394 836 009", rating: "4", location_type: "park", image: "https://scitechdaily.com/images/Dog-Park.jpg")
+  Establishment.create(name: "Ardrie Park Dog Off Leash Area", address: "Ardrie Park, 64 Ardrie Rd, Malvern East, VIC", phone: "0339 776 122", rating: "5", location_type: "park", image: "https://avodermnatural.com/wp-content/uploads/2020/12/puppy-playtime-benefits-of-dog-parks-jpg.jpg")
+  Establishment.create(name: "Darebin Creek Trail", address: "Darebin Creek Trail, Alphington, VIC", phone: "0431 745 001", rating: "5", location_type: "trail", image: "https://www.popsci.com/uploads/2020/08/26/GVGGK5MCDBEP3PS22LJMHY7HV4.jpg")
+  Establishment.create(name: "Old Man Drew", address: "359-361 Mount Alexander Road, Ascot Vale, VIC", phone: "(03) 9375 4024", rating: "5", location_type: "cafe", image: "https://cdn.broadsheet.com.au/cache/0d/56/0d56a4e46e2645d097dd341c855a0c5d.jpg")
+  Establishment.create(name: "Stomping Ground", address: " 100 Gipps St, Collingwood, VIC", phone: "(03) 9415 1944", rating: "5", location_type: "bar", image: "https://data.awol.com.au/wp-content/uploads/2020/08/harlow-bar-dog-search-lead.jpg")
 
   puts "Establishments Created"
 
