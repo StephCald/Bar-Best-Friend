@@ -12,6 +12,16 @@
   }
   .btn {
     width: 100%;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    background-color: grey;
+    border: grey;
   }
+  .btn:hover {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: rgb(227, 227, 227);
+    border: grey;
+    color: grey;
+  }
+
 }
