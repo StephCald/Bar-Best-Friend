@@ -7,20 +7,10 @@
   align-items: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-}
 
-.container-icons {
-  margin-top: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.19);
-  height: 71px;
-  flex-grow: 1;
-  padding: 0px;
-  a {
-    padding: 5px;
-    font-size: 0.8rem;
+  h1 {
+    font-size: 1.65rem;
+    font-weight: bold;
   }
 }
 
@@ -29,15 +19,6 @@
   padding-top: 20px;
 }
 
-.icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium
-}
 
 // .fa-solid {
 //   font-size:x-large
