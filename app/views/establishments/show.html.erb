@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="card">
-    <div class="container-icon">
+      <div class="container-icon">
         <img src="<%= @establishment.image %>">
       <div class="fav-btn show">
         <% if current_user.present? %>
@@ -54,7 +54,6 @@
         <% end %>
       </div>
     </div>
-</div>
     <div>
       <div class="text-start my-2 text-muted">
         <p><em><%= @establishment.location_type.capitalize %></em></p>
@@ -63,13 +62,6 @@
         <p><%= @establishment.address %></p>
         <p style="font-size: 0.9rem"><%= @establishment.phone %></p>
       </div>
-    <div class="container">
-      <% @tag_count.each do |tag| %>
-        <div class="count d-flex justify-content-between">
-          <%= "#{tag[:name]}" %> <i class="fa-sharp fa-solid fa-badge-check"></i> <span class="tag-count ml-2"> <%= "#{tag[:count]}" %> </span>
-        </div>
-      <% end %>
-    </div>
      <div class="container-icons">
       <div>
         <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
@@ -82,7 +74,7 @@
   </div>
     </div>
 </div>
-
+</div>
 
 <div class="tag-container">
   <div id="card-show">
@@ -116,4 +108,3 @@
     </div>
   </div>
 </div>
-

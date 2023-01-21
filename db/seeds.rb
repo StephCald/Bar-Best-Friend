@@ -18,6 +18,9 @@
   Establishment.create(name: "Old Man Drew", address: "359-361 Mount Alexander Road, Ascot Vale, VIC", phone: "(03) 9375 4024", rating: "5", location_type: "cafe", image: "https://cdn.broadsheet.com.au/cache/0d/56/0d56a4e46e2645d097dd341c855a0c5d.jpg")
   Establishment.create(name: "Stomping Ground", address: " 100 Gipps St, Collingwood, VIC", phone: "(03) 9415 1944", rating: "5", location_type: "bar", image: "https://data.awol.com.au/wp-content/uploads/2020/08/harlow-bar-dog-search-lead.jpg")
   Establishment.create(name: "Penders Park", address: "Pender St, St David St, Thornbury VIC ", phone: "(03) 8470 8888", rating: "5", location_type: "park", image: "https://hdp-au-prod-app-dare-yoursay-files.s3.ap-southeast-2.amazonaws.com/4016/4257/1264/SOCIALISEPHOTO_VD2019_PPARK_001.jpg")
+  Establishment.create(name: "Rebel Rebel", address: "93 Plenty Rd, Preston VIC 3072", phone: "(03) 9939 3897", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/cache/87/42/8742e5901970f7496f3f9bd7e9c515df.jpg")
+  Establishment.create(name: "Carwyn Cellars", address: "877 High St, Thornbury VIC 3071", phone: "(03) 9484 1820", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/cache/01/7d/017d1962f346fabc0c206311a109ccc9.jpg")
+  Establishment.create(name: "Chez Misty", address: "103 Grey St, St Kilda VIC 3182", phone: "(04) 3133 1093", rating: "5", location_type: "cafe", image: "https://img.delicious.com.au/pFsL_T5s/w759-h506-cfill/del/2022/04/chez-misty-st-kilda-166653-2.jpg")
 
 
   puts "Establishments Created"
@@ -36,6 +39,9 @@
   outdoor = Tag.create(name: "Outdoor")
   treats = Tag.create(name: "Treats")
   wastebag = Tag.create(name: "Waste Bags")
+
+  review_tag = ReviewTag.create(review_id: 1, tag_id: 1)
+  puts "review-tags created"
 
   puts "tags created"
 
