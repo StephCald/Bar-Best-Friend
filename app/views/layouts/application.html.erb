@@ -39,10 +39,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <div style='min-height: calc(100vh - 100px);
-        position:relative;'>
+    <div style='min-height: calc(100vh - 50px);
+        display: flex;
+        flex-direction: column;'>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>

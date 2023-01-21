@@ -3,11 +3,8 @@
   bottom: 0;
   width: calc(100% - var(--scrollbar-gutter, 0%));
   z-index: 8;
-  display: grid;
-  grid-template: repeat(2, auto) / repeat(3, 33.333%);
-  grid-template-areas:
-    'left center right'
-    'bottom bottom bottom';
+  display: flex;
+  justify-content: center;
 }
 
 .change-display {
@@ -15,6 +12,25 @@
   grid-area: center;
   justify-self: center;
   align-self: end;
+  width: auto;
+
+  a {
+      border: 2px black solid;
+      background-color: black;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .fa-map, .fa-list {
+        margin-left: 8px;
+      }
+    }
 }
 
 .display-btn {
