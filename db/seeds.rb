@@ -17,6 +17,8 @@
   Establishment.create(name: "Darebin Creek Trail", address: "Darebin Creek Trail, Alphington, VIC", phone: "0431 745 001", rating: "5", location_type: "trail", image: "https://www.popsci.com/uploads/2020/08/26/GVGGK5MCDBEP3PS22LJMHY7HV4.jpg")
   Establishment.create(name: "Old Man Drew", address: "359-361 Mount Alexander Road, Ascot Vale, VIC", phone: "(03) 9375 4024", rating: "5", location_type: "cafe", image: "https://cdn.broadsheet.com.au/cache/0d/56/0d56a4e46e2645d097dd341c855a0c5d.jpg")
   Establishment.create(name: "Stomping Ground", address: " 100 Gipps St, Collingwood, VIC", phone: "(03) 9415 1944", rating: "5", location_type: "bar", image: "https://data.awol.com.au/wp-content/uploads/2020/08/harlow-bar-dog-search-lead.jpg")
+  Establishment.create(name: "Penders Park", address: "Pender St, St David St, Thornbury VIC ", phone: "(03) 8470 8888", rating: "5", location_type: "park", image: "https://hdp-au-prod-app-dare-yoursay-files.s3.ap-southeast-2.amazonaws.com/4016/4257/1264/SOCIALISEPHOTO_VD2019_PPARK_001.jpg")
+
 
   puts "Establishments Created"
 
