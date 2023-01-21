@@ -1,13 +1,13 @@
 <div id="navbar" class="navbar">
 
-        <%= link_to root_path do %>
-          <%= image_tag "bbf.png", class: "logo" %>
-        <% end %>
+  <%= link_to root_path do %>
+    <%= image_tag "bbf.png", class: "logo" %>
+  <% end %>
 
+  <%= image_tag "rainbow_wizard.gif", class: "wizard" %>
 
   <% if user_signed_in? %>
     <ul class="flex items-center justify-end">
-
       <%= render 'shared/navbar_dropdown' %>
     </ul>
   <% else %>
