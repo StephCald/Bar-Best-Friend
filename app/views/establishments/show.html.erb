@@ -77,7 +77,8 @@
         <% end %>
       </div>
       <div>
-        <%= link_to "<i class='fa-solid fa-location-arrow'></i>".html_safe, "https://www.google.com/maps?q=#{@establishment.latitude},#{@establishment.longitude}", class: "font-icons" %>
+        <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
+        <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
       </div>
   </div>
     </div>
