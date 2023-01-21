@@ -44,7 +44,15 @@
 
   <div class='map-display-btn'>
     <div class="change-display">
-      <%= link_to 'toggle map', toggle_map_path, class: 'small-btn' %>
+      <% if session[:show_map] %>
+        <%= link_to toggle_map_path do %>
+          Show list <i class="fa-solid fa-list"></i>
+        <% end %>
+      <% else %>
+        <%= link_to toggle_map_path do %>
+          Show map <i class="fa-solid fa-map"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -89,7 +97,7 @@
                   <div class="card-product-infos">
                     <div>
                       <h2> <%= establishment.name %> </h2>
-                      <p><em><%= establishment.location_type  %></em></p>
+                      <p><em><%= establishment.location_type.capitalize %></em></p>
                     </div>
                     <p><em><%= "⭐️" * establishment.rating if establishment.rating?  %></em></p>
                   </div>
