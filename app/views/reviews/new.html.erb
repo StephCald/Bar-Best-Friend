@@ -1,10 +1,10 @@
 <div class="container">
-    <h1>How was <%= @establishment.name %> ?</h1>
+    <h1>How was <%= @establishment.name %>?</h1>
     <p>Please select all the dog freindly features avalible.</p>
   </div>
   <div class="container">
     <%= simple_form_for @review, url:  establishment_reviews_path(@establishment) do |form| %>
-      <%= form.association :tags, as: :check_boxes, input_html: { class: "tag-selector" } %>
+      <%= form.association :tags, as: :check_boxes, legend_tag: false, input_html: { class: "tag-selector" } %>
       <%= form.input :comments, placeholder: "Anything to comment?", class: "comment-box", label: false  %>
       <%= form.button :submit, value: "Submit", class: "submit-button"  %>
     <% end %>

@@ -7,8 +7,19 @@
   border-radius: 20px 20px 3px 3px;
 }
 
-.icon-background {
-  background: #fff;
+.container-icons {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 71px;
+  flex-grow: 1;
+  padding: 0px;
+
+  a {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
 }
 
 .icon {
@@ -16,36 +27,56 @@
   height: 30px;
   float: right;
   border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium
 }
+
+.icon-background {
+  background: #fff;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.19);
+}
+
 .logo {
   float: left;
   width: 80px;
   margin: -2px;
 }
+
 .fa-solid.fa-house {
   font-size: 1.9em;
 }
+
 .fa-solid.fa-arrow-right-from-bracket {
   font-size: 1.9em;
 }
+
 .fa-solid.fa-circle-plus {
   font-size: 2em;
 }
+
 .fa-solid.fa-trash {
   font-size: 1.5em;
 }
+
 .fa-solid.fa-pen-to-square {
   font-size: 1.5em;
 }
+
 .font-icons {
   font-size: 1.5em;
   background-color: white;
   border: none;
-
 }
+
 .fa-sharp.fa-solid.fa-badge-check {
   color: black;
 }
+
 .fa-solid.fa-location-arrow {
   font-size: 2em;
 }
