@@ -38,6 +38,11 @@
   margin: 0 auto;
   width: 300px;
   position: relative;
+
+  p {
+    display: flex;
+    justify-content: start;
+  }
 }
 .card{
   position: relative;
