@@ -16,7 +16,7 @@
           data-transition-leave-from="opacity-100 scale-100"
           data-transition-leave-to="opacity-0 scale-95">
           <div>
-            <% if current_user.admin? then policy(@establishment).edit? %>
+            <% if current_user.present? && current_user.admin? then policy(@establishment).edit? %>
               <%= link_to edit_establishment_path(@establishment), data: {action: "dropdown#toggle"}, method: :get do %>
                 <i class="fa-solid fa-pen-to-square"></i><span style="padding-left: 5px; font-size: 0.7rem">Edit</span>
               <% end %>
