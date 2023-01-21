@@ -78,7 +78,7 @@
       </div>
       <div>
         <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
-        <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.mapbox.com/map-feedback/#/", class: "font-icons" , target: "_blank"%>
+        <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
       </div>
     </div>
   </div>
