@@ -1,6 +1,7 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:show]
+  # skip_before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @user = current_user
