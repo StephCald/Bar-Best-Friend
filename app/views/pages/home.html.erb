@@ -1,11 +1,14 @@
 <div class="container">
-  <h1><%= image_tag "bbf.png", class: "avatar-homepage" %></h1>
-  <h5>Find all your local dog-friendly places in one spot!</h5>
-  <h6>Never leave your furry family member home alone again!</h6>
+  <%# <h1 style="margin: 38px 0 61px 0;"><%= image_tag "bbf.png", class: "avatar-homepage" %>
+  <%# <h5 style="font-size: 1rem;">Find all your local dog-friendly places in one spot!<br>Never leave your furry family member home alone again!</h5> %>
+  <h1 style="align-content:flex-start">Goodmorning</h1><br>
+  <h1> Ben!</h1>
 </div>
   <%# <%= render 'searchbar' %>
 <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
-  <div class="container-icons icon-background">
+  <div class="container-icons icon-background"
+    <%# style='margin-top: 51px;'> %>
+    >
     <%= link_to root_path(location_type: "cafe") do %>
       <div class="icon">
         <i class="fa-solid fa-mug-saucer"></i>

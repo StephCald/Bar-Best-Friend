@@ -1,3 +1,19 @@
 .wizard {
-  display: none;
+  width: 40px;
+  opacity: 0;
+  transition: opacity 1s;
+
+  &:hover {
+    animation: fade-in 1.7s forwards;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
