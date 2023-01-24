@@ -33,10 +33,10 @@
   overflow: hidden;
   background: rgb(255, 254, 254);
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  padding: 5px;
+  padding: 8px;
   border-radius: 16px;
   margin: 0 auto;
-  width: 300px;
+  width: 376px;
   position: relative;
 
   p {
@@ -49,7 +49,7 @@
   border: none;
 }
 .card-trip > img {
-  height: 200px;
+  height: 280px;
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
@@ -120,4 +120,12 @@
     font-size: 0.9rem;
     text-align: start;
   }
+}
+.banner {
+  background-color: white;
+  width: 100vh;
+  margin-left: 4px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+  font-size: 16px;
 }
