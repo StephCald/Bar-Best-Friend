@@ -57,23 +57,22 @@
     </div>
     <div>
       <div class="text-start my-2 text-muted">
-        <p><em><%= @establishment.location_type.capitalize %></em></p>
+        <p style="color: #934DE8;"><em><%= @establishment.location_type.capitalize %></em></p>
       </div>
       <div class="text-start">
         <p><%= @establishment.address %></p>
         <p style="font-size: 0.9rem"><%= @establishment.phone %></p>
       </div>
     </div>
-      <div class="container-icons">
-        <div>
-          <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
-            <i class="fa-solid fa-phone"></i>
-          <% end %>
-        </div>
-        <div>
-          <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
-          <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
-        </div>
+     <div class="container-icons">
+      <div>
+        <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
+          <i class="fa-solid fa-phone", style="color: #934DE8"></i>
+        <% end %>
+      </div>
+      <div style="color: #934DE8;">
+        <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
+        <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
       </div>
     </div>
 </div>
@@ -92,6 +91,9 @@
               <%= "#{tag[:name]}" %><i class="tag-count ml-2"> <%= "#{tag[:count]}" %> </i>
             </div>
           <% end %>
+        </div>
+        <div class="d-flex justify-content-center">
+          <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', method: :get %>
         </div>
         <% if @establishment.reviews.count == 0 %>
           <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
