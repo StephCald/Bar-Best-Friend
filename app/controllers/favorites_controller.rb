@@ -15,6 +15,9 @@ class FavoritesController < ApplicationController
   end
 
   def toggle
+    unless current_user.present?
+      redirect_to login_path  and return
+    end
     @user = current_user
     @establishment = Establishment.find(params[:id])
     authorize @establishment
