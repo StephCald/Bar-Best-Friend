@@ -8,11 +8,9 @@
 }
 
 .change-display {
-  margin-bottom: 40px;
-  grid-area: center;
-  justify-self: center;
-  align-self: end;
-  width: auto;
+  z-index: 8;
+  bottom: 48px;
+  position: fixed;
 
   a {
       border: 2px black solid;
