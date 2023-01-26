@@ -2,7 +2,7 @@
   Establishment.destroy_all
   puts "destroying users"
   User.destroy_all
-  puts "Creating Establishments"
+  puts "Creating Establishments."
 
   Establishment.create(name: "Doghouse Dog Cafe", address: "195 Johnston St, Collingwood, VIC", phone: "(03) 9417 4253", rating: "5", location_type: "cafe", image: "https://pupsy.com.au/wp-content/uploads/2020/02/DogHouse-Cafe.png")
   Establishment.create(name: "Vincent the Dog", address: "348 Drummond st, Carlton, VIC", phone: "(03) 9348 2068", rating: "5", location_type: "cafe", image: "https://cdn.broadsheet.com.au/cache/33/9f/339f57ae97c276ab1ca92e0e26449113.jpg")
@@ -28,9 +28,9 @@
   Establishment.create(name: "A Minor Place", address: "103 Albion St, Brunswick VIC 3056", phone: "(03) 9384 3131", rating: "5", location_type: "cafe", image: "https://resdiaryportal.wpengine.com/wp-content/uploads/2022/07/a-minor-place-melbourne-restaurant.jpg")
   Establishment.create(name: "The Rainbow Hotel", address: "27 St David St, Fitzroy VIC 3065", phone: "(03) 9419 4193", rating: "5", location_type: "bar", image: "https://pupsy.com.au/wp-content/uploads/2022/02/The-Rainbow-Hotel-Fitzroy-5-106-1.png")
 
-  puts "Establishments Created"
+  puts "Establishments Created."
 
-  puts "creating users"
+  puts "creating users."
 
   em = User.create(email: "em@example.com", password: "secret", username: "Em", admin: true)
   steph = User.create(email: "steph@example.com", password: "secret", username: "StephRox", admin: true)
