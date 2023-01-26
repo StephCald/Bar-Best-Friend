@@ -40,41 +40,41 @@
   <div>
     <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
     <div class="container-icons icon-background">
-      <%= link_to root_path(location_type: "cafe") do %>
+      <%= link_to root_path(location_type: "cafe"), class: "nav-link" do %>
         <div class="icon">
           <i class="fa-solid fa-mug-saucer"></i>
           <p>Cafe</p>
         </div>
-    <% end %>
+      <% end %>
 
-    <%= link_to root_path(location_type: "bar") do %>
-      <div class="icon">
-        <i class="fa-solid fa-wine-glass"></i>
-        <p>Bars</p>
-      </div>
-    <% end %>
+      <%= link_to root_path(location_type: "bar") do %>
+        <div class="icon">
+          <i class="fa-solid fa-wine-glass"></i>
+          <p>Bars</p>
+        </div>
+      <% end %>
 
-    <%= link_to root_path(location_type: "beach") do %>
-      <div class="icon">
-        <i class="fa-solid fa-umbrella-beach"></i>
-        <p>Beaches</p>
-      </div>
-    <% end %>
+      <%= link_to root_path(location_type: "beach") do %>
+        <div class="icon">
+          <i class="fa-solid fa-umbrella-beach"></i>
+          <p>Beaches</p>
+        </div>
+      <% end %>
 
-    <%= link_to root_path(location_type: "trail") do %>
-      <div class="icon">
-        <i class="fa-solid fa-person-hiking"></i>
-        <p>Trails</p>
-      </div>
-    <% end %>
+      <%= link_to root_path(location_type: "trail") do %>
+        <div class="icon">
+          <i class="fa-solid fa-person-hiking"></i>
+          <p>Trails</p>
+        </div>
+      <% end %>
 
-    <%= link_to root_path(location_type: "park") do %>
-      <div class="icon">
-        <i class="fa-solid fa-tree"></i>
-        <p>Parks</p>
-      </div>
-    <% end %>
-  </div>
+      <%= link_to root_path(location_type: "park") do %>
+        <div class="icon">
+          <i class="fa-solid fa-tree"></i>
+          <p>Parks</p>
+        </div>
+      <% end %>
+    </div>
   <% end %>
   </div>
 </div>

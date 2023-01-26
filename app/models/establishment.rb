@@ -5,7 +5,7 @@ class Establishment < ApplicationRecord
   validates :name, length: { minimum: 1 }
   validates :phone, format: {
     with: /\A(\+?\(61\)|\(\+?61\)|\+?61|\(0[1-9]\)|0[1-9])?( ?-?[0-9]){7,9}\z/,
-    message: "Only allows Australian numbers "
+    message: "Only allows Australian numbers"
   }
   self.inheritance_column = :_type_disabled
 
