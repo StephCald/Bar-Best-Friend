@@ -1,13 +1,15 @@
 <div class="container">
+  <%# Card Name and Admin Controls %>
   <div id="card-show">
     <div style="display: flex; justify-content:space-between;">
       <h1 style='font-size: 1.6rem; font-weight: bold;'><%= @establishment.name %></h1>
       <div data-controller="dropdown"
         style="display: flex;
-        justify-content: end;
-        padding-right: 5px;
-        z-index: 5;"
+          justify-content: end;
+          padding-right: 5px;
+          z-index: 5;"
         >
+        <%# Admin Controls %>
         <button type='button' data-action="dropdown#toggle click@window->dropdown#hide"><i class="fa-solid fa-ellipsis-h"></i>
         </button>
         <div data-dropdown-target="menu"
@@ -31,55 +33,59 @@
       </div>
     </div>
 
-
-  <div class="card">
-   <div class="container-icon">
-      <img src="<%= @establishment.image %>">
-      <div class="fav-btn show">
-        <% if current_user.present? %>
-          <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
-            <% if current_user.favorited?(@establishment) %>
-              <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:transparent" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width: 35px; height: 35px; color: white">
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                </svg>
-              <% end %>
-            <% else %>
-              <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:transparent" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="grey" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 35px; height: 35px; color: white">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                </svg>
+    <%# Card that houses Image w/ Information %>
+    <div class="card">
+      <div class="container-icon">
+        <img src="<%= @establishment.image %>">
+        <div class="fav-btn show">
+          <% if current_user.present? %>
+            <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
+              <% if current_user.favorited?(@establishment) %>
+                <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:transparent" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width: 35px; height: 35px; color: white">
+                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                  </svg>
+                <% end %>
+              <% else %>
+                <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:transparent" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="grey" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 35px; height: 35px; color: white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="text-start my-2 text-muted">
-        <p style="color: #934DE8;"><em><%= @establishment.location_type.capitalize %></em></p>
-      </div>
-      <div class="text-start">
-        <p><%= @establishment.address %></p>
-        <p style="font-size: 0.9rem"><%= @establishment.phone %></p>
-      </div>
-    </div>
-     <div class="container-icons">
       <div>
-        <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
-          <i class="fa-solid fa-phone", style="color: #934DE8"></i>
-        <% end %>
+        <%# Location %>
+        <div class="text-start my-2 text-muted">
+          <p style="color: #934DE8;"><em><%= @establishment.location_type.capitalize %></em></p>
+        </div>
+        <div class="text-start">
+          <p><%= @establishment.address %></p>
+          <p style="font-size: 0.9rem"><%= @establishment.phone %></p>
+        </div>
       </div>
-      <div style="color: #934DE8;">
-        <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
-        <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
+      <%# Phone and map link %>
+      <div class="container-icons">
+        <div>
+          <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
+            <i class="fa-solid fa-phone", style="color: #934DE8"></i>
+          <% end %>
+        </div>
+        <div style="color: #934DE8;">
+          <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
+        </div>
       </div>
     </div>
+  </div>
 </div>
+
+<%# Reviews and insight tags %>
 <div class="container" style="margin-bottom: 17px;">
   <div class="tag-container">
     <div id="card-show">
-      <%# Reviews %>
       <div class="tag-container">
         <div class="d-flex justify-content-between align-items-center">
           <p style="font-size: 16px;">People often mention:</p>
