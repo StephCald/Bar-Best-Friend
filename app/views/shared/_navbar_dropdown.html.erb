@@ -1,5 +1,5 @@
 <div data-controller="dropdown" class="relative inline-block">
-  <button type="button" data-action="dropdown#toggle click@window->dropdown#hide"><i class="fa-solid fa-bars" style="font-size: 1.3em;"></i></button>
+  <button type="button" data-action="dropdown#toggle click@window->dropdown#hide"><i style = " color: #7A23EB;" class="fa-solid fa-bars"></i></button>
   <div
     data-dropdown-target="menu"
     class="absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -10,7 +10,7 @@
     >
     <div class="py-1">
       <%= link_to user_favorites_path(current_user), data: {action: "dropdown#toggle"}, class: 'text-black group flex items-center px-4 py-3 hover:bg-gray-100 hover:text-gray-900 rounded-none m-0' do %>
-        <%= image_tag "bbf3.png", class: "icon mr-2 ml-0 pl-0 w-6 h-6" %>
+        <%= image_tag "bbf3.png", class: "icon mr-2 w-1.7rem h-1.7rme" %>
         <span class="text-sm">Favourites</span>
       <% end %>
       <%= link_to new_establishment_path, data: {action: "dropdown#toggle"}, class: 'text-black group flex items-center px-4 py-3 hover:bg-gray-100 hover:text-gray-900 rounded-none m-0' do %>
