@@ -11,6 +11,7 @@ body {
   align-items: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  background-color: white;
 
   h1 {
     font-size: 1.65rem;
@@ -23,7 +24,34 @@ body {
   padding-top: 20px;
 }
 
-
 // .fa-solid {
 //   font-size:x-large
 // }
+
+.suggestions {
+  background-color: white !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: auto !important;
+  padding-left: 135px !important;
+}
+
+// .mapboxgl-ctrl-geocoder--suggestion {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.suggestions > li > a {
+  background-color: white !important;
+  display: flex !important;
+  justify-content: center !important;
+  border-radius: 0px !important;
+  // padding-left: 300px !important;
+}
+
+.suggestions > .active {
+  // background-color: aqua !important;
+  display: flex !important;
+  justify-content: center !important;
+}

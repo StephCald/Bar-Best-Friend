@@ -20,10 +20,13 @@
   Establishment.create(name: "Rebel Rebel", address: "93 Plenty Rd, Preston VIC 3072", phone: "(03) 9939 3897", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/cache/87/42/8742e5901970f7496f3f9bd7e9c515df.jpg")
   Establishment.create(name: "Carwyn Cellars", address: "877 High St, Thornbury VIC 3071", phone: "(03) 9484 1820", rating: "5", location_type: "bar", image: "https://cdn.broadsheet.com.au/cache/01/7d/017d1962f346fabc0c206311a109ccc9.jpg")
   Establishment.create(name: "Chez Misty", address: "103 Grey St, St Kilda VIC 3182", phone: "(04) 3133 1093", rating: "5", location_type: "cafe", image: "https://img.delicious.com.au/pFsL_T5s/w759-h506-cfill/del/2022/04/chez-misty-st-kilda-166653-2.jpg")
-  Establishment.create(name: "Port Melbourne Dog Beach", address: "Bay Trail, Port Melbourne VIC 3207", phone: "(00) ", rating: "5", location_type: "beach", image: "https://www.popsci.com/uploads/2020/08/26/GVGGK5MCDBEP3PS22LJMHY7HV4.jpg")
-  Establishment.create(name: "Keast Park Dog Beach", address: "Nepean Hwy, Seaford VIC 3198", phone: "(00) 000 000", rating: "5", location_type: "beach", image: "")
-  Establishment.create(name: "Mathias Track, Olinda", address: "Mathias Rd, Olinda VIC 3788", phone: " ", rating: "5", location_type: "trail", image: "https://explorethedandenongs.com.au/wp-content/uploads/2019/03/Mathias-Walking-Track.jpg")
-  Establishment.create(name: "Merri Creek Trail", address: "397-405 State Route 45, Fitzroy North VIC 3068", phone: "00 0000 0000 ", rating: "4", location_type: "trail", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Merri_Creek_Trail_-_sign_and_path.JPG/500px-Merri_Creek_Trail_-_sign_and_path.JPG")
+  Establishment.create(name: "Port Melbourne Dog Beach", address: "Bay Trail, Port Melbourne VIC 3207", phone: "(01) 2897 5634  ", rating: "5", location_type: "beach", image: "https://www.popsci.com/uploads/2020/08/26/GVGGK5MCDBEP3PS22LJMHY7HV4.jpg")
+  Establishment.create(name: "Keast Park Dog Beach", address: "Nepean Hwy, Seaford VIC 3198", phone: "(05) 4597 3578", rating: "5", location_type: "beach", image: "https://petkeen.com/wp-content/uploads/2022/10/two-happy-welsh-corgi-pembroke-dogs-at-a-beach_Jus_Ol_Shutterstock-760x508.jpg")
+  Establishment.create(name: "Mathias Track, Olinda", address: "Mathias Rd, Olinda VIC 3788", phone: "(05) 5685 8698", rating: "5", location_type: "trail", image: "https://explorethedandenongs.com.au/wp-content/uploads/2019/03/Mathias-Walking-Track.jpg")
+  Establishment.create(name: "Merri Creek Trail", address: "397-405 State Route 45, Fitzroy North VIC 3068", phone: "(04) 1875 0258 ", rating: "4", location_type: "trail", image: "http://blokeonbike.com/bloke1/wp-content/uploads/2017/07/merri-creek-3.jpg")
+  Establishment.create(name: "Parco Canteen", address: "2 Argyle Pl S, Carlton VIC 3053", phone: "(04) 9313 0317", rating: "4", location_type: "cafe", image: "https://hiddencitysecrets.com.au/wp-content/uploads/2019/07/Lux-Foundry-Dog-Friendly-Cafes-Brunswick-Melbourne-Terrace-4.jpg")
+  Establishment.create(name: "A Minor Place", address: "103 Albion St, Brunswick VIC 3056", phone: "(03) 9384 3131", rating: "5", location_type: "cafe", image: "https://resdiaryportal.wpengine.com/wp-content/uploads/2022/07/a-minor-place-melbourne-restaurant.jpg")
+  Establishment.create(name: "The Rainbow Hotel", address: "27 St David St, Fitzroy VIC 3065", phone: "(03) 9419 4193", rating: "5", location_type: "bar", image: "https://pupsy.com.au/wp-content/uploads/2022/02/The-Rainbow-Hotel-Fitzroy-5-106-1.png")
 
   puts "Establishments Created"
 
@@ -41,6 +44,7 @@
   outdoor = Tag.create(name: "Outdoor")
   treats = Tag.create(name: "Treats")
   wastebag = Tag.create(name: "Waste Bags")
+  dogmenu = Tag.create(name: "Dog Menu")
 
   review_tag = ReviewTag.create(review_id: 1, tag_id: 1)
   puts "review-tags created"

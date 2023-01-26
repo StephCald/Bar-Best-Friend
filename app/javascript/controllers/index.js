@@ -4,7 +4,7 @@
 
 import { application } from "./application";
 
-import { navbtn } from "./nav-btn";
+// import { navbtn } from "./nav-btn";
 
 import AddressAutocompleteController from "./address_autocomplete_controller";
 application.register("address-autocomplete", AddressAutocompleteController);
@@ -18,5 +18,5 @@ application.register("hello", HelloController);
 import MapController from "./map_controller";
 application.register("map", MapController);
 
-import wizard from "./wizard";
-application.register("wizard", Wizard);
+// import wizard from "./wizard";
+// application.register("wizard", Wizard);
