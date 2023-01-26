@@ -8,7 +8,7 @@
 }
 
 .container-icons {
-  margin-top: 7px;
+  margin-top: 8px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -16,10 +16,6 @@
   flex-grow: 1;
   padding: 0px;
 
-  a {
-    padding: 5px;
-    font-size: 0.8rem;
-  }
 }
 
 .icon {
@@ -33,18 +29,31 @@
   align-items: center;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium
+  font-size: 12px;
+  color: #7A23EB;
 }
-
+.container-icons .icon:hover {
+    color: #C954FF;
+    position: relative;
+    width: 3.25em;
+    height: 3.25em;
+    text-align: center;
+    border-radius: 50%;
+    transition: all .2s;
+    margin: 0em 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .icon-background {
-  background: #fff;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.19);
+  width: 47vh;
+  margin-left: 20px;
 }
 
 .logo {
   float: left;
-  width: 80px;
-  margin: -2px;
+  width: 100px;
+  margin: 15px 17px 14px -14px;
 }
 
 .fa-solid.fa-arrow-right-from-bracket {
@@ -73,5 +82,12 @@
 }
 
 .fa-solid.fa-location-arrow {
-  font-size: 2em;
+  font-size: 1.2em;
+}
+.rating-icon {
+  display: flex;
+  padding-left: 0.3px;
+  .m-3 {
+    margin: 0rem !important;
+  }
 }
