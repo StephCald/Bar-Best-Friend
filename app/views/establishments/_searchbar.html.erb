@@ -1,31 +1,41 @@
-<div class="container">
-<form novalidate="novalidate" class="simple_form search" action="#" accept-charset="UTF-8" method="get">
-<div class="search-form-control form-group">
-<!--
-  # <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-  # <input
-  #   name="address" placeholder="Address" type="text"
-  #   autocomplete="address-line1"
-  # />
-  # <button name="button" type="submit" class="btn btn-flat">
-  #   <i class="fas fa-search"></i> Search
-  # </button>
--->
+# <div class="container">
+# <form novalidate="novalidate" class="simple_form search" action="#" accept-charset="UTF-8" method="get">
+# <div class="search-form-control form-group">
+# <!--
+#   # <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+#   # <input
+#   #   name="address" placeholder="Address" type="text"
+#   #   autocomplete="address-line1"
+#   # />
+#   # <button name="button" type="submit" class="btn btn-flat">
+#   #   <i class="fas fa-search"></i> Search
+#   # </button>
+# -->
 
-<div data-controller="map"
-  id="map"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-map-markers-value="<%= @markers.to_json %>"
-  style="width: 100%; height: 400px;">
-</div>
+# <div data-controller="map"
+#   id="map"
+#   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+#   data-map-markers-value="<%= @markers.to_json %>"
+#   style="width: 100%; height: 400px;">
+# </div>
 
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  id='map'
-  data-map-api-key-value='<%= ENV['MAPBOX_API_KEY'] %>' >
-</div>
+# <div style="width: 100%; height: 600px;"
+#   data-controller="map"
+#   id='map'
+#   data-map-api-key-value='<%= ENV['MAPBOX_API_KEY'] %>' >
+# </div>
 
-</div>
-</form>
-</div>
+# </div>
+# </form>
+# </div>
+
+# display: flex;
+# flex-direction: column;
+# width: 100%;
+# height: fit-content;
+
+display: flex;
+flex-direction: column;
+width: 100%;
+height: auto;
