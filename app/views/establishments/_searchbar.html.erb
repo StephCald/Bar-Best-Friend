@@ -12,13 +12,13 @@
   # </button>
 -->
 
-<!--
-# <mapbox-search-box
-# access-token=MAPBOX_API_KEY
-# proximity="0,0"
-# >
-# </mapbox-search-box>
-  -->
+<div data-controller="map"
+  id="map"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-map-markers-value="<%= @markers.to_json %>"
+  style="width: 100%; height: 400px;">
+</div>
+
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
