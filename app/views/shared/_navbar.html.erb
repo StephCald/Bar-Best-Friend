@@ -1,35 +1,44 @@
 <div id="navbar" class="navbar">
+  <div class="">
+    <div class="row">
+      <div class="col">
+        <%= link_to root_path do %>
+          <%= image_tag "bbf.png", class: "logo" %>
+        <% end %>
+      </div>
+      <%= image_tag "rainbow_wizard.gif", class: "wizard" %>
 
-  <%= link_to root_path do %>
-    <%= image_tag "bbf.png", class: "logo" %>
-  <% end %>
+      <div class="col">
+        <ul>
+        <% if user_signed_in? %>
+          <%= render 'shared/navbar_dropdown' %>
+          </ul>
+        <% else %>
+          <li >
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-  <%= image_tag "rainbow_wizard.gif", class: "wizard" %>
-
-  <% if user_signed_in? %>
-    <ul class="flex items-center justify-end">
-      <%= render 'shared/navbar_dropdown' %>
-    </ul>
-  <% else %>
-    <li >
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-    </li>
-  <% end %>
-
-<div class="banner">
-  <% if current_user.present? && (request.path == root_path || (@establishment.try(:path) == request.path)) && !request.path.include?("favorites") && !request.path.include?("new") %>
-    <% current_hour = Time.now.hour %>
-    <% if current_hour < 12 %>
-      <h1>Good morning, <%= @user.username %>!</h1>
-    <% elsif current_hour < 17 %>
-      <h1>Good afternoon, <%= @user.username %>!</h1>
-    <% else %>
-      <h1>Good evening, <%= @user.username %>!</h1>
-    <% end %>
-  <% end %>
-</div>
+  <div class="row">
+    <div class="col">
+      <div class="banner">
+        <% if current_user.present? && (request.path == root_path || (@establishment.try(:path) == request.path)) && !request.path.include?("favorites") && !request.path.include?("new") %>
+          <% current_hour = Time.now.hour %>
+          <% if current_hour < 12 %>
+            <h1>Good morning, <%= @user.username %>!</h1>
+          <% elsif current_hour < 17 %>
+            <h1>Good afternoon, <%= @user.username %>!</h1>
+          <% else %>
+            <h1>Good evening, <%= @user.username %>!</h1>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <div>
-  <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
+    <%= turbo_frame_tag 'turbo-list', data: { turbo_action: 'advance' } do %>
     <div class="container-icons icon-background">
       <%= link_to root_path(location_type: "cafe"), class: "nav-link" do %>
         <div class="icon">

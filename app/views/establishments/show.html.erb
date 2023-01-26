@@ -57,7 +57,7 @@
     </div>
     <div>
       <div class="text-start my-2 text-muted">
-        <p style="color: #934DE8;"><em><%= @establishment.location_type.capitalize %></em></p>
+        <p style="color: #7A23EB; font-family: Comfortaa, cursive;"><em><%= @establishment.location_type.capitalize %></em></p>
       </div>
       <div class="text-start">
         <p><%= @establishment.address %></p>
@@ -67,15 +67,16 @@
      <div class="container-icons">
       <div>
         <%= button_to "tel:#{@establishment.phone}", class: 'font-icons', method: :get do %>
-          <i class="fa-solid fa-phone", style="color: #934DE8"></i>
+          <i class="fa-solid fa-phone", style="color: #7A23EB"></i>
         <% end %>
       </div>
-      <div style="color: #934DE8;">
+      <div>
         <%# <%= link_to "<i class='fa-solid fa-location-arrow'></i>",target: "_blank", class: "font-icons" %>
         <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
       </div>
     </div>
 </div>
+
 <div class="container" style="margin-bottom: 17px;">
   <div class="tag-container">
     <div id="card-show">
@@ -83,7 +84,7 @@
       <div class="tag-container">
         <div class="d-flex justify-content-between align-items-center">
           <p style="font-size: 16px;">People often mention:</p>
-            <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', style: "background-color: #615acc; color: white;", method: :get %>
+            <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', method: :get %>
         </div>
         <div class="tag-container">
           <% @tag_count.each do |tag| %>
@@ -92,9 +93,7 @@
             </div>
           <% end %>
         </div>
-        <div class="d-flex justify-content-center">
-          <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', method: :get %>
-        </div>
+
         <% if @establishment.reviews.count == 0 %>
           <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
         <% else %>

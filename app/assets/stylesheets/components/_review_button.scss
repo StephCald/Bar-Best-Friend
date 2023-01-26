@@ -1,18 +1,14 @@
 .review-button {
   box-shadow: 0px 0px 3px -1px #818181;
   border-radius: 20px;
-  border: 1px solid #000000;
+  border: 1px solid $purple;
+  background-color: $purple !important;
   cursor: pointer;
-  color: #000000;
+  color: white;
   font-size: 12px;
   padding: 8px 11px;
+  font-family: "Comfortaa","cursive";
 }
-
-.review-button:hover {
-  background-color: #000000;
-  color: white;
-}
-
 .review-button:active {
   position: relative;
   top: 1px;

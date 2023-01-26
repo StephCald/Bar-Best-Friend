@@ -21,6 +21,7 @@
 .card-product img {
   width: 40%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .card-product-infos {
@@ -123,9 +124,22 @@
 }
 .banner {
   background-color: white;
-  width: 100vh;
   margin-left: 4px;
   margin-top: 28px;
   margin-bottom: 32px;
   font-size: 16px;
+  color: $purple;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: $purple;
+}
+a:active {
+  color: $purple;
 }

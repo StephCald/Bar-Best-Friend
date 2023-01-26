@@ -39,16 +39,16 @@
   justify-content: center;
   border-radius: 35px;
   padding: 0.1rem 0.5rem;
-  background-color: rgb(141, 137, 137);
-  color: rgb(0, 0, 0);
-  border: 1px solid #000000;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
   margin-right: 0.6rem;
   margin-bottom: 0.2rem;
   margin-right: 0.9rem;
   height: 20px;
-  line-height: 16px;
+  line-height: 12px;
   text-align: center;
-  font-size: small;
+  font-size: 12px;
   width: 112px;
   align-items: flex-end;
 }
@@ -63,12 +63,12 @@
   justify-content: left;
   align-items: center;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Comfortaa","cursive";
   flex-wrap: wrap;
 }
 .tag-container {
-    margin-top: 17px;
-    display: inline-table;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 17px;
+  display: inline-table;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
