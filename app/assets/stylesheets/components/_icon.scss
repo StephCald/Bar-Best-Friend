@@ -15,7 +15,7 @@
   height: 71px;
   flex-grow: 1;
   padding: 0px;
-
+  border-radius: 8px;
 }
 
 .icon {
@@ -34,7 +34,7 @@
 }
 
 .container-icons .icon:hover {
-  color: #C954FF;
+  color:$purple;
   position: relative;
   width: 3.25em;
   height: 3.25em;

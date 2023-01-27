@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="card-show">
+  <div class="card-trip", style="width: 350px;">
     <div style="display: flex; justify-content:space-between;">
       <h1 style='font-size: 1.6rem; font-weight: bold;'><%= @establishment.name %></h1>
       <div data-controller="dropdown"
@@ -40,7 +40,7 @@
           <%= turbo_frame_tag dom_id(@establishment, :favourite) do %>
             <% if current_user.favorited?(@establishment) %>
               <%= button_to toggle_establishment_path(@establishment), method: :post, style: "border:0; background-color:transparent" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width: 46px; height: 32px; color: white; margin-top: 4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#7A23EB" style="width: 46px; height: 32px; color: #7A23EB; margin-top: 4px;">
                   <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                 </svg>
               <% end %>
@@ -75,37 +75,39 @@
         <%= link_to content_tag(:i, '', class: "fa-solid fa-location-arrow"), "https://www.google.com/maps?saddr=My+Location&daddr=#{@establishment.address}", class: "font-icons" , id: 'nav-button', target: "_blank", data: {location_name: @establishment.name} %>
       </div>
     </div>
+  </div>
 </div>
 
 <div class="container" style="margin-bottom: 17px;">
   <div class="tag-container">
-    <div id="card-show">
-      <%# Reviews %>
+    <div class="card-trip", style="width: 350px;">
+        <%# Reviews %>
       <div class="tag-container">
-        <div class="d-flex justify-content-between align-items-center">
-          <p style="font-size: 16px;">People often mention:</p>
-            <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', method: :get %>
-        </div>
-        <div class="tag-container">
-          <% @tag_count.each do |tag| %>
-            <div class="count">
-              <%= "#{tag[:name]}" %><i class="tag-count ml-2"> <%= "#{tag[:count]}" %> </i>
-            </div>
-          <% end %>
-        </div>
-
-        <% if @establishment.reviews.count == 0 %>
-          <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
-        <% else %>
-          <% @establishment.reviews.each do |review| %>
-            <% unless review.comments == "" then %>
-              <div class="card-review">
-                <h6><strong><%= review.user.username %>:</strong></h6>
-                <p><%= review.comments %></p>
+         <div class="d-flex justify-content-between align-items-center">
+           <p style="font-size: 16px;">People often mention:</p>
+             <%= button_to 'Leave a Review', new_establishment_review_path(@establishment), class: 'review-button', method: :get %>
+         </div>
+          <div class="tag-container">
+            <% @tag_count.each do |tag| %>
+              <div class="count">
+                <%= "#{tag[:name]}" %><i class="tag-count ml-2"> <%= "#{tag[:count]}" %> </i>
               </div>
             <% end %>
+          </div>
+        <div>
+          <% if @establishment.reviews.count == 0 %>
+            <p>Help your fellow BBFs, be the first to leave a review on this list!</p>
+          <% else %>
+            <% @establishment.reviews.each do |review| %>
+              <% unless review.comments == "" then %>
+                <div class="card-review">
+                  <h6><strong><%= review.user.username %>:</strong></h6>
+                  <p><%= review.comments %></p>
+                </div>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
