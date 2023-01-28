@@ -2,6 +2,8 @@
   Establishment.destroy_all
   puts "destroying users"
   User.destroy_all
+  puts "destroying tags"
+  Tag.destroy_all
   puts "Creating Establishments."
 
   Establishment.create(name: "Doghouse Dog Cafe", address: "195 Johnston St, Collingwood, VIC", phone: "(03) 9417 4253", rating: "5", location_type: "cafe", image: "https://pupsy.com.au/wp-content/uploads/2020/02/DogHouse-Cafe.png")
@@ -40,6 +42,7 @@
   puts "users created"
 
   puts "creating tags"
+
   outdoor = Tag.create(name: "Outdoor")
   indoor = Tag.create(name: "Indoor")
   treats = Tag.create(name: "Treats")
