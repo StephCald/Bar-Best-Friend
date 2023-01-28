@@ -1,16 +1,3 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-
 #navbar {
   display: flex;
   position: sticky;
@@ -132,7 +119,6 @@ li:active a::before {
 
 #navbar.clickHide {
   width: 10%;
-
   transition: all .5s .65s;
 }
 
@@ -142,8 +128,12 @@ li:active a::before {
 }
 
 .clearfix:after {
-   content: " ";
-   display: block;
-   height: 0;
-   clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.active_tab {
+  color: #7A23EB;
 }

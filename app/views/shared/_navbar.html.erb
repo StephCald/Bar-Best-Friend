@@ -41,37 +41,37 @@
         <div class="container-icons icon-background">
 
           <%= link_to root_path(location_type: "cafe") do %>
-            <div class="icon">
-              <i class="fa-solid fa-mug-saucer"></i>
-              <p>Cafe</p>
+            <div class="icon" >
+              <i class="fa-solid fa-mug-saucer <%= 'active_tab' if @cafe_active %>"></i>
+              <p class="<%= 'active_tab' if @cafe_active %>">Cafe</p>
             </div>
           <% end %>
 
           <%= link_to root_path(location_type: "bar") do %>
             <div class="icon">
-              <i class="fa-solid fa-wine-glass"></i>
-              <p>Bars</p>
+              <i class="fa-solid fa-wine-glass <%= 'active_tab' if @bar_active %>"></i>
+              <p class="<%= 'active_tab' if @bar_active %>">Bars</p>
             </div>
           <% end %>
 
           <%= link_to root_path(location_type: "beach") do %>
             <div class="icon">
-              <i class="fa-solid fa-umbrella-beach"></i>
-              <p>Beaches</p>
+              <i class="fa-solid fa-umbrella-beach <%= 'active_tab' if @beach_active %>"></i>
+              <p class="<%= 'active_tab' if @beach_active %>">Beaches</p>
             </div>
           <% end %>
 
           <%= link_to root_path(location_type: "trail") do %>
             <div class="icon">
-              <i class="fa-solid fa-person-hiking"></i>
-              <p>Trails</p>
+              <i class="fa-solid fa-person-hiking <%= 'active_tab' if @trail_active %>"></i>
+              <p class="<%= 'active_tab' if @trail_active %>">Trails</p>
             </div>
           <% end %>
 
           <%= link_to root_path(location_type: "park") do %>
             <div class="icon">
-              <i class="fa-solid fa-tree"></i>
-              <p>Parks</p>
+              <i class="fa-solid fa-tree <%= 'active_tab' if @park_active %>"></i>
+              <p class="<%= 'active_tab' if @park_active %>">Parks</p>
             </div>
           <% end %>
         </div>
