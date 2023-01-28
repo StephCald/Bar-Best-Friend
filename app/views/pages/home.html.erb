@@ -1,8 +1,27 @@
 <div class="container">
-  <div class="change-display">
-    <% if session[:show_map] %>
-      <%= link_to toggle_map_path do %>
-        Show list <i class="fa-solid fa-list"></i>
+  <div>
+    <% case params[:location_type] %>
+      <% when "bar" %>
+        <strong><p>All Dog-friendly Bars</p></strong>
+      <% when "beach" %>
+        <strong><p>All Dog-friendly Beaches</p></strong>
+      <% when "trail" %>
+        <strong><p>All Dog-friendly Trails</p></strong>
+      <% when "park" %>
+        <strong><p>All Dog-friendly Parks</p></strong>
+      <% else %>
+        <strong><p>All Dog-friendly Cafes</p></strong>
+      <% end %>
+  </div>
+    <div class="change-display">
+      <% if session[:show_map] %>
+        <%= link_to toggle_map_path do %>
+          Show list <i class="fa-solid fa-list"></i>
+        <% end %>
+      <% else %>
+        <%= link_to toggle_map_path do %>
+          Show map <i class="fa-solid fa-map"></i>
+        <% end %>
       <% end %>
     <% else %>
       <%= link_to toggle_map_path do %>

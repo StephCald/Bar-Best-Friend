@@ -39,17 +39,16 @@
 
   puts "users created"
 
-  water = Tag.create(name: "Water Bowl")
-  indoor = Tag.create(name: "Indoor")
+  puts "creating tags"
   outdoor = Tag.create(name: "Outdoor")
+  indoor = Tag.create(name: "Indoor")
   treats = Tag.create(name: "Treats")
-  wastebag = Tag.create(name: "Waste Bags")
+  water = Tag.create(name: "Water Bowl")
   dogmenu = Tag.create(name: "Dog Menu")
-
-  review_tag = ReviewTag.create(review_id: 1, tag_id: 1)
-  puts "review-tags created"
+  wastebag = Tag.create(name: "Waste Bags")
 
   puts "tags created"
+  puts "creating reviews"
 
   review = Review.create(comments: "Staff was so friendly to my dog and they even have a special dog menu.",user_id: 1, establishment_id: 1)
   review = Review.create(comments: "big outdoor patio and happy hour specials.",user_id: 1, establishment_id: 2)
