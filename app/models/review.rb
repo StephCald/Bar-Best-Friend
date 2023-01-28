@@ -5,8 +5,8 @@ class Review < ApplicationRecord
   validates :user, presence: true
   validates :establishment, presence: true
 
-  has_many :review_tags
-  has_many :tags, through: :review_tags
+  has_many :review_tags, dependent: :delete_all
+  has_many :tags, through: :review_tags, dependent: :delete_all
 
   accepts_nested_attributes_for :review_tags
 end
