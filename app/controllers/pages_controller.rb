@@ -4,6 +4,19 @@ class PagesController < ApplicationController
   def home
     @user = current_user
     if params[:location_type]
+      case params[:location_type]
+      when "bar"
+        @bar_active = true
+      when "beach"
+        @beach_active = true
+      when "trail"
+        @trail_active = true
+      when "park"
+        @park_active = true
+      else
+        @cafe_active = true
+      end
+
       @establishments = Establishment.where(location_type: params[:location_type])
     else
       @establishments = Establishment.where(location_type: "cafe")
@@ -12,7 +25,7 @@ class PagesController < ApplicationController
       {
         lat: establishment.latitude,
         lng: establishment.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {establishment: establishment}),
+        info_window: render_to_string(partial: "info_window", locals: { establishment: establishment }),
         image_url: helpers.asset_url("paw.png")
       }
     end
